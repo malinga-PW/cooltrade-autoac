@@ -41,7 +41,7 @@ export default function LiveBayStatusWidget({ onClaimBay }) {
   };
 
   return (
-    <div className="bg-slate-900 border-y border-slate-800 text-white py-4 relative z-20 shadow-inner">
+    <div className="bg-slate-50 border-y border-slate-200 text-slate-800 py-3.5 relative z-20 shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
@@ -49,19 +49,19 @@ export default function LiveBayStatusWidget({ onClaimBay }) {
           {/* Left Title */}
           <div className="flex items-center space-x-3 shrink-0">
             <span className="flex h-3 w-3 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-600"></span>
             </span>
             <div>
               <div className="flex items-center space-x-2">
-                <span className="text-xs font-black uppercase tracking-wider text-white font-heading">
+                <span className="text-xs font-black uppercase tracking-wider text-slate-900 font-heading">
                   LIVE WORKSHOP TELEMETRY
                 </span>
-                <span className="text-[10px] text-emerald-400 font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800">
+                <span className="text-[10px] text-emerald-800 font-bold bg-emerald-100 px-2 py-0.5 rounded border border-emerald-300">
                   BAY 2 OPEN NOW
                 </span>
               </div>
-              <p className="text-[11px] text-slate-400">Bandaragama Workshop • Real-Time Queue Status</p>
+              <p className="text-[11px] text-slate-500">Bandaragama Workshop • Real-Time Queue Status</p>
             </div>
           </div>
 
@@ -72,24 +72,24 @@ export default function LiveBayStatusWidget({ onClaimBay }) {
                 key={bay.id}
                 className={`p-2.5 rounded-2xl border transition-all ${
                   bay.available
-                    ? 'bg-emerald-950/40 border-emerald-600/70 shadow-sm shadow-emerald-950/40'
-                    : 'bg-slate-950/60 border-slate-800'
+                    ? 'bg-emerald-50/90 border-emerald-300 shadow-xs'
+                    : 'bg-white border-slate-200 shadow-2xs'
                 }`}
               >
                 <div className="flex items-center justify-between text-[10px] font-black uppercase">
-                  <span className={bay.available ? 'text-emerald-400' : 'text-slate-400'}>
+                  <span className={bay.available ? 'text-emerald-800' : 'text-slate-500'}>
                     {bay.name}
                   </span>
-                  <span className={`px-1.5 py-0.2 rounded text-[9px] ${
-                    bay.available ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-400'
+                  <span className={`px-1.5 py-0.2 rounded text-[9px] font-extrabold ${
+                    bay.available ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-600'
                   }`}>
                     {bay.available ? 'OPEN' : 'BUSY'}
                   </span>
                 </div>
-                <div className="text-xs font-bold text-white truncate mt-1">
+                <div className="text-xs font-bold text-slate-900 truncate mt-1">
                   {bay.vehicle}
                 </div>
-                <div className="text-[10px] text-slate-400 truncate">
+                <div className="text-[10px] text-slate-500 truncate">
                   {bay.eta}
                 </div>
               </div>
@@ -100,7 +100,7 @@ export default function LiveBayStatusWidget({ onClaimBay }) {
           <div className="shrink-0">
             <button
               onClick={handleClaim}
-              className="w-full lg:w-auto px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-md shadow-emerald-950/40 transition-all active:scale-95 cursor-pointer"
+              className="w-full lg:w-auto px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-sm shadow-emerald-700/20 transition-all active:scale-95 cursor-pointer"
             >
               <span>Drive In / Hold Bay 2</span>
               <ChevronRight className="w-3.5 h-3.5" />

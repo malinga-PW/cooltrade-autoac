@@ -15,7 +15,7 @@ import {
 
 export default function Footer({ setActiveTab }) {
   return (
-    <footer className="bg-[#04070E] text-slate-400 text-xs sm:text-sm border-t border-slate-900 pt-16 pb-12">
+    <footer className="bg-slate-950 text-slate-400 text-xs sm:text-sm border-t border-slate-900 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Main Grid */}
@@ -27,13 +27,13 @@ export default function Footer({ setActiveTab }) {
               <img
                 src="/assets/cooltrade-logo.png"
                 alt="Cool Trade Services Logo"
-                className="w-12 h-12 rounded-full object-contain bg-slate-950 border border-slate-800 p-0.5"
+                className="w-12 h-12 rounded-full object-contain bg-slate-900 border border-slate-800 p-0.5"
               />
               <div>
                 <span className="text-xl font-black text-white tracking-tight font-heading">
-                  <span className="text-cyan-400">COOL </span>TRADE SERVICES<span className="text-cyan-400">.</span>
+                  <span className="text-emerald-400">COOL </span>TRADE SERVICES<span className="text-emerald-400">.</span>
                 </span>
-                <p className="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">
+                <p className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest">
                   AUTO A/C SPECIALISTS • BANDARAGAMA
                 </p>
               </div>
@@ -55,7 +55,7 @@ export default function Footer({ setActiveTab }) {
                 href="https://wa.me/94777739449"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3.5 py-2 rounded-xl bg-emerald-950/60 hover:bg-emerald-900/70 text-emerald-300 font-bold text-xs border border-emerald-800/60 flex items-center gap-1.5 transition-colors"
+                className="px-3.5 py-2 rounded-xl bg-emerald-950/80 hover:bg-emerald-900 text-emerald-300 font-bold text-xs border border-emerald-800/80 flex items-center gap-1.5 transition-colors"
               >
                 <MessageCircle className="w-3.5 h-3.5" />
                 <span>WhatsApp Bay</span>
@@ -72,7 +72,7 @@ export default function Footer({ setActiveTab }) {
               <li>
                 <button 
                   onClick={() => { setActiveTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-emerald-400 transition-colors cursor-pointer"
                 >
                   Home & Live Bays
                 </button>
@@ -80,7 +80,7 @@ export default function Footer({ setActiveTab }) {
               <li>
                 <button 
                   onClick={() => { setActiveTab('services'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-emerald-400 transition-colors cursor-pointer"
                 >
                   Automotive AC Services
                 </button>
@@ -88,7 +88,7 @@ export default function Footer({ setActiveTab }) {
               <li>
                 <button 
                   onClick={() => { setActiveTab('shop'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-emerald-400 transition-colors cursor-pointer"
                 >
                   Direct Import Parts Store
                 </button>
@@ -102,16 +102,16 @@ export default function Footer({ setActiveTab }) {
                       if (el) el.scrollIntoView({ behavior: 'smooth' });
                     }, 100);
                   }}
-                  className="hover:text-cyan-400 transition-colors flex items-center gap-1"
+                  className="hover:text-emerald-400 transition-colors flex items-center gap-1 cursor-pointer"
                 >
-                  <Gauge className="w-3 h-3 text-cyan-400" />
+                  <Gauge className="w-3 h-3 text-emerald-400" />
                   <span>Vehicle Diagnostic Tool</span>
                 </button>
               </li>
               <li>
                 <button 
                   onClick={() => { setActiveTab('about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-emerald-400 transition-colors cursor-pointer"
                 >
                   About Cool Trade Services
                 </button>
@@ -119,7 +119,7 @@ export default function Footer({ setActiveTab }) {
               <li>
                 <button 
                   onClick={() => { setActiveTab('admin'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-emerald-400 transition-colors cursor-pointer"
                 >
                   Workshop Admin Portal (Demo)
                 </button>
@@ -135,11 +135,11 @@ export default function Footer({ setActiveTab }) {
             
             <div className="space-y-2 text-xs">
               <div className="flex items-start space-x-2.5">
-                <MapPin className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                 <span>Kesbewa-Kindelpitiya-Bandaragama Road, Bandaragama 12534, Sri Lanka</span>
               </div>
               <div className="flex items-center space-x-2.5">
-                <Clock className="w-4 h-4 text-cyan-400 shrink-0" />
+                <Clock className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>Mon – Sat: 8:00 AM – 6:30 PM (Sun: Priority Appointments)</span>
               </div>
               <div className="flex items-center space-x-2.5">
@@ -148,8 +148,8 @@ export default function Footer({ setActiveTab }) {
               </div>
             </div>
 
-            <div className="p-3 rounded-2xl bg-[#0B101D] border border-slate-800 text-[11px] text-slate-300">
-              <strong className="text-cyan-300 block mb-0.5">OEM Direct Importers:</strong>
+            <div className="p-3 rounded-2xl bg-slate-900 border border-slate-800 text-[11px] text-slate-300">
+              <strong className="text-emerald-300 block mb-0.5">OEM Direct Importers:</strong>
               Denso • Sanden • Valeo • Hanon Systems genuine components backed by verified warranty.
             </div>
           </div>
@@ -163,7 +163,7 @@ export default function Footer({ setActiveTab }) {
           </div>
           <div className="flex items-center space-x-1">
             <span>Engineered by</span>
-            <strong className="text-cyan-400">PixelWave AI Solutions</strong>
+            <strong className="text-emerald-400">PixelWave AI Solutions</strong>
           </div>
         </div>
 

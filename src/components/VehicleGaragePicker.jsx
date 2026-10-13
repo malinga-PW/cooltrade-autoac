@@ -144,23 +144,23 @@ export default function VehicleGaragePicker({ onOpenBooking, setActiveTab }) {
   };
 
   return (
-    <section className="py-24 bg-[#070B14] border-b border-slate-900 relative overflow-hidden">
+    <section className="py-24 bg-slate-50/70 border-b border-slate-200 relative overflow-hidden">
       
       {/* Background accents */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-80 h-80 bg-cyan-600/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-80 h-80 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-800 text-cyan-300 text-xs font-bold">
-            <Car className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold">
+            <Car className="w-3.5 h-3.5 text-emerald-600" />
             <span>GARAGE COMPATIBILITY SPEC LOCKER</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-heading">
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight font-heading">
             Select Your Vehicle for Exact Factory AC Specs
           </h2>
-          <p className="text-slate-400 text-xs sm:text-sm">
+          <p className="text-slate-600 text-xs sm:text-sm">
             Never guess gas weight or compressor oil. Lock your vehicle model below to unlock official manufacturer refrigerant capacities and direct matching OEM spare parts.
           </p>
         </div>
@@ -175,8 +175,8 @@ export default function VehicleGaragePicker({ onOpenBooking, setActiveTab }) {
                 onClick={() => handleMakeChange(make)}
                 className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-black transition-all cursor-pointer ${
                   selectedMake === make
-                    ? 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-950/60 ring-2 ring-cyan-400'
-                    : 'bg-slate-900/90 text-slate-300 border border-slate-800 hover:border-slate-700 hover:text-white'
+                    ? 'bg-emerald-600 text-white shadow-md shadow-emerald-700/20 ring-2 ring-emerald-500'
+                    : 'bg-white text-slate-700 border border-slate-200 hover:border-emerald-300 hover:text-emerald-700 shadow-2xs'
                 }`}
               >
                 {make}
@@ -192,8 +192,8 @@ export default function VehicleGaragePicker({ onOpenBooking, setActiveTab }) {
                 onClick={() => setSelectedModel(item.model)}
                 className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                   selectedModel === item.model
-                    ? 'bg-cyan-950 text-cyan-300 border border-cyan-700 shadow-xs'
-                    : 'bg-slate-950/80 text-slate-400 border border-slate-800/80 hover:text-slate-200 hover:border-slate-700'
+                    ? 'bg-emerald-100 text-emerald-800 border border-emerald-300 shadow-2xs font-extrabold'
+                    : 'bg-white text-slate-600 border border-slate-200 hover:text-slate-900 hover:border-slate-300 shadow-2xs'
                 }`}
               >
                 {item.model}
@@ -204,64 +204,64 @@ export default function VehicleGaragePicker({ onOpenBooking, setActiveTab }) {
 
         {/* Specification Dashboard Card */}
         {currentSpec && (
-          <div className="max-w-5xl mx-auto bg-gradient-to-br from-[#0B101D] via-[#0E1527] to-[#0A1324] rounded-3xl p-6 sm:p-10 text-white border border-slate-800 shadow-2xl relative overflow-hidden">
+          <div className="max-w-5xl mx-auto bg-white rounded-3xl p-6 sm:p-10 text-slate-900 border border-slate-200 shadow-xl relative overflow-hidden">
             
             {/* Top Bar */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-800/80 gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-100 gap-4">
               <div>
-                <span className="text-[10px] font-black uppercase tracking-wider text-cyan-400 bg-cyan-950/80 px-2.5 py-0.5 rounded-full border border-cyan-800">
+                <span className="text-[10px] font-black uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
                   OEM SPECIFICATION VERIFIED
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-black font-heading text-white mt-1">
+                <h3 className="text-2xl sm:text-3xl font-black font-heading text-slate-900 mt-1">
                   {selectedMake} {currentSpec.model}
                 </h3>
-                <span className="text-xs text-slate-400 font-medium">{currentSpec.years}</span>
+                <span className="text-xs text-slate-500 font-medium">{currentSpec.years}</span>
               </div>
 
               <div className="text-left sm:text-right">
                 <span className="text-[10px] text-slate-400 font-bold uppercase block">Est. Bay Turnaround</span>
-                <span className="text-sm font-black text-cyan-300 font-mono">{currentSpec.bayTime}</span>
+                <span className="text-sm font-black text-emerald-700 font-mono">{currentSpec.bayTime}</span>
               </div>
             </div>
 
             {/* Spec Matrix Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8">
               
-              <div className="p-5 rounded-2xl bg-slate-950/70 border border-slate-800/80 space-y-2">
-                <div className="text-[10px] text-slate-400 font-bold uppercase flex items-center gap-1.5">
-                  <Gauge className="w-3.5 h-3.5 text-cyan-400" />
+              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                <div className="text-[10px] text-slate-500 font-bold uppercase flex items-center gap-1.5">
+                  <Gauge className="w-3.5 h-3.5 text-emerald-600" />
                   <span>Exact Factory Gas Charge</span>
                 </div>
-                <div className="text-xl font-black text-cyan-400 font-heading">
+                <div className="text-xl font-black text-emerald-700 font-heading">
                   {currentSpec.gasWeight}
                 </div>
-                <p className="text-[11px] text-slate-400 leading-snug">
+                <p className="text-[11px] text-slate-600 leading-snug">
                   Computerized Robinair automated vacuum extraction & exact gram weight refilling.
                 </p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-slate-950/70 border border-slate-800/80 space-y-2">
-                <div className="text-[10px] text-slate-400 font-bold uppercase flex items-center gap-1.5">
-                  <Droplets className="w-3.5 h-3.5 text-amber-400" />
+              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                <div className="text-[10px] text-slate-500 font-bold uppercase flex items-center gap-1.5">
+                  <Droplets className="w-3.5 h-3.5 text-amber-600" />
                   <span>Mandatory Lubricant Spec</span>
                 </div>
-                <div className="text-sm font-bold text-amber-300">
+                <div className="text-sm font-bold text-amber-800">
                   {currentSpec.oilSpec}
                 </div>
-                <p className="text-[11px] text-slate-400 leading-snug">
+                <p className="text-[11px] text-slate-600 leading-snug">
                   Zero short-circuit risk. Protects inverter motor winding and mechanical scroll vanes.
                 </p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-slate-950/70 border border-slate-800/80 space-y-2">
-                <div className="text-[10px] text-slate-400 font-bold uppercase flex items-center gap-1.5">
-                  <Layers className="w-3.5 h-3.5 text-sky-400" />
+              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                <div className="text-[10px] text-slate-500 font-bold uppercase flex items-center gap-1.5">
+                  <Layers className="w-3.5 h-3.5 text-teal-600" />
                   <span>Compressor Architecture</span>
                 </div>
-                <div className="text-sm font-bold text-sky-200">
+                <div className="text-sm font-bold text-teal-800">
                   {currentSpec.compressorType}
                 </div>
-                <p className="text-[11px] text-slate-400 leading-snug">
+                <p className="text-[11px] text-slate-600 leading-snug">
                   Direct import replacement unit available in stock with 6-month warranty.
                 </p>
               </div>
@@ -269,22 +269,22 @@ export default function VehicleGaragePicker({ onOpenBooking, setActiveTab }) {
             </div>
 
             {/* Matching Parts & Actions Footer */}
-            <div className="pt-6 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="pt-6 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="space-y-1 text-center md:text-left">
-                <div className="text-xs font-bold text-slate-300 flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                <div className="text-xs font-bold text-slate-800 flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
                   <span>Direct Import Parts In-Stock in Bandaragama:</span>
                 </div>
-                <div className="text-xs text-slate-400 flex flex-wrap gap-4 pt-1">
-                  <span>Compressor: <strong className="text-white">{currentSpec.matchingCompressorPrice}</strong></span>
-                  <span>Cooling Coil: <strong className="text-white">{currentSpec.matchingCoilPrice}</strong></span>
-                  <span>Filter: <strong className="text-white">Rs. 2,900</strong></span>
+                <div className="text-xs text-slate-600 flex flex-wrap gap-4 pt-1">
+                  <span>Compressor: <strong className="text-slate-900">{currentSpec.matchingCompressorPrice}</strong></span>
+                  <span>Cooling Coil: <strong className="text-slate-900">{currentSpec.matchingCoilPrice}</strong></span>
+                  <span>Filter: <strong className="text-slate-900">Rs. 2,900</strong></span>
                 </div>
               </div>
 
               <button
                 onClick={handleWhatsAppBooking}
-                className="w-full md:w-auto px-6 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg shadow-cyan-950/60 flex items-center justify-center gap-2 transition-all active:scale-95 cursor-pointer"
+                className="w-full md:w-auto px-6 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-black text-xs uppercase tracking-wider shadow-md shadow-emerald-700/20 flex items-center justify-center gap-2 transition-all active:scale-95 cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>Book This Vehicle Bay Slot on WhatsApp</span>

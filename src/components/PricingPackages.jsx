@@ -61,19 +61,19 @@ export default function PricingPackages({ onSelectPlan }) {
   ];
 
   return (
-    <section id="packages" className="py-24 relative bg-[#0A0F1D] border-b border-slate-900">
+    <section id="packages" className="py-24 relative bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-800 text-cyan-300 text-xs font-bold">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             <span>TRANSPARENT WORKSHOP PRICING</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-heading">
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight font-heading">
             Fixed-Price Auto AC Service Packages
           </h2>
-          <p className="text-slate-400 text-xs sm:text-base">
+          <p className="text-slate-600 text-xs sm:text-base">
             No hidden costs. Direct import OEM parts, automated vacuum charging, and certified technician craftsmanship at our Bandaragama service facility.
           </p>
         </div>
@@ -85,12 +85,12 @@ export default function PricingPackages({ onSelectPlan }) {
               key={idx}
               className={`rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 relative ${
                 plan.popular
-                  ? 'bg-gradient-to-b from-[#0F172A] to-[#0B101D] text-white shadow-2xl border-2 border-cyan-500 scale-105 z-10'
-                  : 'bg-[#0B101D] text-white border border-slate-800 hover:border-slate-700 shadow-md'
+                  ? 'bg-slate-900 text-white shadow-2xl border-2 border-emerald-500 scale-105 z-10'
+                  : 'bg-slate-50 text-slate-900 border border-slate-200 hover:border-emerald-300 shadow-sm'
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 text-[11px] font-black uppercase tracking-wider shadow-md">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white text-[11px] font-black uppercase tracking-wider shadow-md">
                   Most Popular Workshop Choice
                 </div>
               )}
@@ -98,32 +98,32 @@ export default function PricingPackages({ onSelectPlan }) {
               <div>
                 <div className="flex justify-between items-start mb-4">
                   <span className={`text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full ${
-                    plan.popular ? 'bg-cyan-950 text-cyan-300 border border-cyan-700' : 'bg-slate-900 text-slate-400 border border-slate-800'
+                    plan.popular ? 'bg-emerald-950 text-emerald-300 border border-emerald-700' : 'bg-white text-emerald-800 border border-slate-200'
                   }`}>
                     {plan.tag}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-black font-heading mb-2 text-white">
+                <h3 className={`text-xl font-black font-heading mb-2 ${plan.popular ? 'text-white' : 'text-slate-900'}`}>
                   {plan.name}
                 </h3>
-                <p className="text-xs mb-6 leading-relaxed text-slate-400">
+                <p className={`text-xs mb-6 leading-relaxed ${plan.popular ? 'text-slate-300' : 'text-slate-600'}`}>
                   {plan.desc}
                 </p>
 
-                <div className="mb-6 pb-6 border-b border-slate-800">
-                  <span className="text-xs font-bold text-slate-400">Rs. </span>
-                  <span className={`text-4xl font-black font-heading ${plan.popular ? 'text-cyan-400' : 'text-white'}`}>
+                <div className={`mb-6 pb-6 border-b ${plan.popular ? 'border-slate-800' : 'border-slate-200'}`}>
+                  <span className={`text-xs font-bold ${plan.popular ? 'text-slate-400' : 'text-slate-500'}`}>Rs. </span>
+                  <span className={`text-4xl font-black font-heading ${plan.popular ? 'text-emerald-400' : 'text-slate-900'}`}>
                     {plan.price}
                   </span>
-                  <span className="text-xs font-semibold text-slate-400 block mt-1">/ {plan.period}</span>
+                  <span className={`text-xs font-semibold block mt-1 ${plan.popular ? 'text-slate-400' : 'text-slate-500'}`}>/ {plan.period}</span>
                 </div>
 
                 <div className="space-y-3 mb-8">
                   {plan.features.map((feat, fIdx) => (
                     <div key={fIdx} className="flex items-start space-x-2.5 text-xs">
-                      <Check className={`w-4 h-4 shrink-0 mt-0.5 ${plan.popular ? 'text-cyan-400' : 'text-cyan-500'}`} />
-                      <span className="text-slate-300 font-medium">
+                      <Check className={`w-4 h-4 shrink-0 mt-0.5 ${plan.popular ? 'text-emerald-400' : 'text-emerald-600'}`} />
+                      <span className={`font-medium ${plan.popular ? 'text-slate-200' : 'text-slate-700'}`}>
                         {feat}
                       </span>
                     </div>
@@ -135,8 +135,8 @@ export default function PricingPackages({ onSelectPlan }) {
                 onClick={() => onSelectPlan({ plan: plan.name, price: plan.price, title: plan.name })}
                 className={`w-full py-3.5 rounded-2xl font-black text-xs uppercase tracking-wider transition-all flex items-center justify-center space-x-2 active:scale-95 cursor-pointer ${
                   plan.popular
-                    ? 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 shadow-lg shadow-cyan-950/60'
-                    : 'bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-slate-700'
+                    ? 'bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white shadow-lg shadow-emerald-950/40'
+                    : 'bg-white hover:bg-emerald-50 text-emerald-800 border border-slate-300 hover:border-emerald-300 font-bold shadow-2xs'
                 }`}
               >
                 <span>{plan.btnText}</span>

@@ -98,35 +98,20 @@ export default function ShopPage({ onBookPart, setActiveTab }) {
       warranty: '6 Months Warranty',
       origin: 'Direct Import Heavy Duty',
       badge: 'Dual AC Spec',
-      spec: 'High-Heat Transfer Micro-Tube Alloy • Integrated Receiver Drier Filter',
+      spec: 'Reinforced Aluminum Tube Fin Core • Integrated Filter Receiver Dryer',
       image: '/assets/banner-store.jpg'
     },
     {
-      id: 'comp_sanden_508',
-      name: 'Sanden SD508 Universal AC Compressor',
-      brand: 'Sanden',
-      partNumber: 'SD5H14 / SD508-R134a',
-      compatibility: 'Universal Commercial, Lorries, Classic Cars, Custom Retrofits',
-      category: 'compressor',
-      price: 'Rs. 38,000',
-      status: 'In Stock',
-      warranty: '6 Months Warranty',
-      origin: 'Sanden Singapore / Japan',
-      badge: 'Heavy Duty',
-      spec: '5-Cylinder Swashplate • 12V Heavy Clutch • Twin V-Belt / Multi-Rib',
-      image: '/assets/banner-store.jpg'
-    },
-    {
-      id: 'filter_pm25_all',
-      name: 'Premium 3-Layer Activated Carbon Cabin Filter',
+      id: 'filter_pm25_charcoal',
+      name: 'PM2.5 Activated Coconut Charcoal Cabin Filter',
       brand: 'Toyota',
-      partNumber: '87139-30040 / PM2.5-C',
+      partNumber: '87139-30040 / PM2.5',
       compatibility: 'Toyota Prius, Aqua, Premio, Allion, Axio, Fielder, Harrier',
       category: 'filter',
       price: 'Rs. 2,900',
-      status: 'In Stock (Pack of 1)',
-      warranty: 'Original Sealed',
-      origin: 'Direct Import OEM',
+      status: 'In Stock (Direct Import)',
+      warranty: 'High-Flow Odor Stop',
+      origin: 'Denso Medical Grade',
       badge: 'Health Choice',
       spec: 'High-Density PM2.5 Filtration • Anti-Bacterial & Coconut Charcoal Layer',
       image: '/assets/banner-store.jpg'
@@ -195,7 +180,7 @@ export default function ShopPage({ onBookPart, setActiveTab }) {
   };
 
   return (
-    <div className="bg-[#070B14] min-h-screen text-slate-100">
+    <div className="bg-[#F8FAFC] min-h-screen text-slate-900">
       
       {/* Cinematic Page Banner */}
       <PageBanner
@@ -203,17 +188,17 @@ export default function ShopPage({ onBookPart, setActiveTab }) {
         subtitle="Genuine OEM Denso, Sanden & Valeo Compressors, Cooling Coils, Condensers and 99.9% Pure R134a/R1234yf Gas in Bandaragama."
         badge="DIRECT IMPORTS & OEM SPARES"
         bgImage="/assets/banner-store.jpg"
-        breadcrumbs={[
-          { label: 'Home', tabId: 'home' },
-          { label: 'Auto Parts Store', active: true }
-        ]}
-        setActiveTab={setActiveTab}
+        breadcrumbCurrent="Auto Parts Store"
+        onNavigateHome={() => {
+          setActiveTab('home');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
         {/* Search, Filter Bar & Column Switcher */}
-        <div className="bg-[#0B101D] rounded-3xl border border-slate-800 p-6 shadow-2xl mb-10 space-y-6">
+        <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm mb-10 space-y-6">
           
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             {/* Search Input */}
@@ -224,17 +209,17 @@ export default function ShopPage({ onBookPart, setActiveTab }) {
                 placeholder="Search vehicle (e.g. Prius, WagonR, KDH) or Part No..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 rounded-2xl border border-slate-800 bg-slate-950 focus:outline-none focus:border-cyan-500 text-xs sm:text-sm font-medium transition-all text-white placeholder:text-slate-500"
+                className="w-full pl-11 pr-4 py-3 rounded-2xl border border-slate-200 bg-slate-50 focus:outline-none focus:border-emerald-500 text-xs sm:text-sm font-medium transition-all text-slate-900 placeholder:text-slate-400"
               />
             </div>
 
             {/* Layout Column Switcher (4, 3, 2, 1) */}
             <div className="flex items-center space-x-2 shrink-0">
-              <span className="text-xs font-bold text-slate-400 mr-1 hidden sm:inline-block">Grid View:</span>
+              <span className="text-xs font-bold text-slate-500 mr-1 hidden sm:inline-block">Grid View:</span>
               <button
                 onClick={() => setColumns(4)}
-                className={`p-2.5 rounded-xl border transition-all ${
-                  columns === 4 ? 'bg-cyan-500 text-slate-950 border-cyan-400 shadow-sm font-black' : 'border-slate-800 text-slate-400 hover:bg-slate-900 hover:text-white'
+                className={`p-2.5 rounded-xl border transition-all cursor-pointer ${
+                  columns === 4 ? 'bg-emerald-600 text-white border-emerald-500 shadow-xs font-black' : 'border-slate-200 text-slate-600 hover:bg-slate-100'
                 }`}
                 title="4 Columns"
               >
@@ -242,8 +227,8 @@ export default function ShopPage({ onBookPart, setActiveTab }) {
               </button>
               <button
                 onClick={() => setColumns(3)}
-                className={`p-2.5 rounded-xl border transition-all ${
-                  columns === 3 ? 'bg-cyan-500 text-slate-950 border-cyan-400 shadow-sm font-black' : 'border-slate-800 text-slate-400 hover:bg-slate-900 hover:text-white'
+                className={`p-2.5 rounded-xl border transition-all cursor-pointer ${
+                  columns === 3 ? 'bg-emerald-600 text-white border-emerald-500 shadow-xs font-black' : 'border-slate-200 text-slate-600 hover:bg-slate-100'
                 }`}
                 title="3 Columns"
               >
@@ -251,8 +236,8 @@ export default function ShopPage({ onBookPart, setActiveTab }) {
               </button>
               <button
                 onClick={() => setColumns(2)}
-                className={`p-2.5 rounded-xl border transition-all ${
-                  columns === 2 ? 'bg-cyan-500 text-slate-950 border-cyan-400 shadow-sm font-black' : 'border-slate-800 text-slate-400 hover:bg-slate-900 hover:text-white'
+                className={`p-2.5 rounded-xl border transition-all cursor-pointer ${
+                  columns === 2 ? 'bg-emerald-600 text-white border-emerald-500 shadow-xs font-black' : 'border-slate-200 text-slate-600 hover:bg-slate-100'
                 }`}
                 title="2 Columns (Default)"
               >
@@ -260,8 +245,8 @@ export default function ShopPage({ onBookPart, setActiveTab }) {
               </button>
               <button
                 onClick={() => setColumns(1)}
-                className={`p-2.5 rounded-xl border transition-all ${
-                  columns === 1 ? 'bg-cyan-500 text-slate-950 border-cyan-400 shadow-sm font-black' : 'border-slate-800 text-slate-400 hover:bg-slate-900 hover:text-white'
+                className={`p-2.5 rounded-xl border transition-all cursor-pointer ${
+                  columns === 1 ? 'bg-emerald-600 text-white border-emerald-500 shadow-xs font-black' : 'border-slate-200 text-slate-600 hover:bg-slate-100'
                 }`}
                 title="1 Column (List)"
               >
@@ -271,18 +256,18 @@ export default function ShopPage({ onBookPart, setActiveTab }) {
           </div>
 
           {/* Filters Row */}
-          <div className="space-y-3 pt-3 border-t border-slate-800">
+          <div className="space-y-3 pt-3 border-t border-slate-100">
             {/* Category Chips */}
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-black uppercase text-slate-400 tracking-wider w-24 shrink-0">Type:</span>
+              <span className="text-xs font-black uppercase text-slate-500 tracking-wider w-24 shrink-0">Type:</span>
               {categoryList.map(cat => (
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                     selectedCategory === cat.id
-                      ? 'bg-cyan-500 text-slate-950 shadow-xs font-black'
-                      : 'bg-slate-950 text-slate-400 hover:bg-slate-900 hover:text-slate-200 border border-slate-800'
+                      ? 'bg-emerald-600 text-white shadow-2xs font-black'
+                      : 'bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200'
                   }`}
                 >
                   {cat.label}
@@ -292,15 +277,15 @@ export default function ShopPage({ onBookPart, setActiveTab }) {
 
             {/* Brand Chips */}
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-black uppercase text-slate-400 tracking-wider w-24 shrink-0">Make:</span>
+              <span className="text-xs font-black uppercase text-slate-500 tracking-wider w-24 shrink-0">Make:</span>
               {brandList.map(brand => (
                 <button
                   key={brand.id}
                   onClick={() => setSelectedBrand(brand.id)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                     selectedBrand === brand.id
-                      ? 'bg-slate-800 text-cyan-300 border border-cyan-500 shadow-xs'
-                      : 'bg-slate-950 text-slate-400 hover:bg-slate-900 hover:text-slate-200 border border-slate-800'
+                      ? 'bg-emerald-100 text-emerald-800 border border-emerald-300 font-extrabold shadow-2xs'
+                      : 'bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200'
                   }`}
                 >
                   {brand.label}
@@ -310,7 +295,7 @@ export default function ShopPage({ onBookPart, setActiveTab }) {
               {(selectedBrand !== 'all' || selectedCategory !== 'all' || searchQuery) && (
                 <button
                   onClick={resetFilters}
-                  className="px-3 py-1.5 rounded-xl text-xs font-bold text-red-400 hover:bg-red-950/60 flex items-center gap-1 ml-auto border border-red-800/80 transition-colors"
+                  className="px-3 py-1.5 rounded-xl text-xs font-bold text-red-600 hover:bg-red-50 flex items-center gap-1 ml-auto border border-red-200 transition-colors cursor-pointer"
                 >
                   <RotateCcw className="w-3 h-3" />
                   <span>Reset All</span>
@@ -323,10 +308,10 @@ export default function ShopPage({ onBookPart, setActiveTab }) {
 
         {/* Parts Count Status */}
         <div className="flex items-center justify-between mb-6">
-          <p className="text-xs font-black uppercase tracking-wider text-slate-400">
-            Showing <strong className="text-cyan-400 font-mono text-sm">{filteredParts.length}</strong> Genuine Parts & Systems in Bandaragama
+          <p className="text-xs font-black uppercase tracking-wider text-slate-500">
+            Showing <strong className="text-emerald-700 font-mono text-sm">{filteredParts.length}</strong> Genuine Parts & Systems in Bandaragama
           </p>
-          <span className="text-xs text-cyan-300 font-bold flex items-center gap-1">
+          <span className="text-xs text-emerald-700 font-bold flex items-center gap-1">
             <Truck className="w-3.5 h-3.5" /> Island-wide Express Delivery Available
           </span>
         </div>
@@ -341,12 +326,12 @@ export default function ShopPage({ onBookPart, setActiveTab }) {
           {filteredParts.map((part) => (
             <div
               key={part.id}
-              className="bg-[#0B101D] rounded-3xl border border-slate-800 p-6 shadow-xl hover:shadow-2xl hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 relative"
+              className="bg-white rounded-3xl border border-slate-200 p-6 shadow-xs hover:shadow-xl hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 relative"
             >
               <div>
                 {/* Header Tag */}
                 <div className="flex items-start justify-between mb-3">
-                  <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800">
+                  <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
                     {part.badge}
                   </span>
                   <span className="text-[11px] font-mono font-bold text-slate-400">
@@ -355,48 +340,48 @@ export default function ShopPage({ onBookPart, setActiveTab }) {
                 </div>
 
                 {/* Part Name */}
-                <h3 className="text-base sm:text-lg font-black text-white tracking-tight font-heading group-hover:text-cyan-400 transition-colors mb-1.5">
+                <h3 className="text-base sm:text-lg font-black text-slate-900 tracking-tight font-heading group-hover:text-emerald-700 transition-colors mb-1.5">
                   {part.name}
                 </h3>
 
                 {/* Vehicle Compatibility */}
-                <div className="p-3 rounded-2xl bg-slate-950/80 border border-slate-800/80 mb-4 space-y-1">
-                  <div className="text-[10px] font-black uppercase text-slate-400 flex items-center gap-1">
-                    <Car className="w-3 h-3 text-cyan-400" /> Compatible Vehicles
+                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 mb-4 space-y-1">
+                  <div className="text-[10px] font-black uppercase text-slate-500 flex items-center gap-1">
+                    <Car className="w-3 h-3 text-emerald-600" /> Compatible Vehicles
                   </div>
-                  <div className="text-xs font-bold text-slate-200 leading-snug">
+                  <div className="text-xs font-bold text-slate-800 leading-snug">
                     {part.compatibility}
                   </div>
                 </div>
 
                 {/* Technical Specs */}
-                <p className="text-xs text-slate-400 leading-relaxed mb-4">
+                <p className="text-xs text-slate-600 leading-relaxed mb-4">
                   {part.spec}
                 </p>
 
                 {/* Origin & Warranty Badges */}
                 <div className="flex flex-wrap gap-2 mb-6">
-                  <div className="inline-flex items-center gap-1 text-[11px] font-bold text-slate-300 bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-lg">
-                    <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
+                  <div className="inline-flex items-center gap-1 text-[11px] font-bold text-slate-700 bg-slate-50 border border-slate-200 px-2.5 py-1 rounded-lg">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                     <span>{part.warranty}</span>
                   </div>
-                  <div className="inline-flex items-center gap-1 text-[11px] font-bold text-slate-300 bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-lg">
-                    <Zap className="w-3.5 h-3.5 text-amber-400" />
+                  <div className="inline-flex items-center gap-1 text-[11px] font-bold text-slate-700 bg-slate-50 border border-slate-200 px-2.5 py-1 rounded-lg">
+                    <Zap className="w-3.5 h-3.5 text-amber-600" />
                     <span>{part.origin}</span>
                   </div>
                 </div>
               </div>
 
               {/* Pricing & WhatsApp Button */}
-              <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                 <div>
                   <span className="text-[10px] text-slate-400 font-bold uppercase block">Direct Price</span>
-                  <span className="text-lg font-black text-cyan-400 font-heading">{part.price}</span>
+                  <span className="text-lg font-black text-emerald-700 font-heading">{part.price}</span>
                 </div>
 
                 <button
                   onClick={() => handleOrderWhatsApp(part)}
-                  className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-xs shadow-md shadow-cyan-950/60 flex items-center space-x-1.5 transition-all active:scale-95 cursor-pointer"
+                  className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-black text-xs shadow-md shadow-emerald-700/20 flex items-center space-x-1.5 transition-all active:scale-95 cursor-pointer"
                 >
                   <MessageCircle className="w-3.5 h-3.5" />
                   <span>Order on WhatsApp</span>

@@ -130,20 +130,20 @@ export default function ServicesSection({ onBookService, hideHeader = false }) {
     : services.filter(s => s.category === selectedCategory);
 
   return (
-    <section id="services" className="py-24 relative bg-[#070B14] border-b border-slate-900">
+    <section id="services" className="py-24 relative bg-slate-50/70 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         {!hideHeader && (
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-800 text-cyan-300 text-xs font-bold">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold">
+              <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
               <span>SPECIALIZED AUTO A/C ENGINEERING</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-heading">
+            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight font-heading">
               Comprehensive Automotive Cooling Solutions
             </h2>
-            <p className="text-slate-400 text-xs sm:text-base">
+            <p className="text-slate-600 text-xs sm:text-base">
               From automated Robinair gas charging to complex dashboard dismantling and direct Japanese OEM spare parts, our Bandaragama workshop delivers dealership-grade precision at transparent prices.
             </p>
           </div>
@@ -157,8 +157,8 @@ export default function ServicesSection({ onBookService, hideHeader = false }) {
               onClick={() => setSelectedCategory(cat.id)}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 selectedCategory === cat.id
-                  ? 'bg-cyan-500 text-slate-950 shadow-md font-black'
-                  : 'bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800'
+                  ? 'bg-emerald-600 text-white shadow-xs font-black'
+                  : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
               }`}
             >
               {cat.label}
@@ -173,43 +173,43 @@ export default function ServicesSection({ onBookService, hideHeader = false }) {
             return (
               <div
                 key={service.id}
-                className="bg-[#0B101D] rounded-3xl border border-slate-800 p-6 sm:p-7 shadow-xl hover:shadow-2xl hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 relative"
+                className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-7 shadow-xs hover:shadow-xl hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 relative"
               >
                 <div>
                   <div className="flex items-start justify-between mb-4">
-                    <div className="p-3 rounded-2xl bg-cyan-950/80 border border-cyan-800/80 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-slate-950 transition-colors">
+                    <div className="p-3 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800">
+                    <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">
                       {service.tag}
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-black text-white tracking-tight font-heading group-hover:text-cyan-400 transition-colors">
+                  <h3 className="text-lg font-black text-slate-900 tracking-tight font-heading group-hover:text-emerald-700 transition-colors">
                     {service.title}
                   </h3>
-                  <div className="text-xs font-bold text-cyan-400 mb-2">
+                  <div className="text-xs font-bold text-emerald-700 mb-2">
                     {service.subtitle}
                   </div>
 
-                  <p className="text-xs text-slate-400 leading-relaxed mb-5">
+                  <p className="text-xs text-slate-600 leading-relaxed mb-5">
                     {service.desc}
                   </p>
 
-                  <div className="space-y-2 mb-6 border-t border-slate-800/80 pt-4">
+                  <div className="space-y-2 mb-6 border-t border-slate-100 pt-4">
                     {service.features.map((feat, idx) => (
-                      <div key={idx} className="flex items-center space-x-2 text-xs text-slate-300">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                      <div key={idx} className="flex items-center space-x-2 text-xs text-slate-700">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                         <span>{feat}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                   <div>
                     <span className="text-[10px] text-slate-400 font-bold uppercase block">Starting Rate</span>
-                    <span className="text-sm font-black text-white font-heading">{service.price}</span>
+                    <span className="text-sm font-black text-slate-900 font-heading">{service.price}</span>
                   </div>
 
                   <button
@@ -225,7 +225,7 @@ export default function ServicesSection({ onBookService, hideHeader = false }) {
                         window.open(`https://wa.me/94777739449?text=${text}`, '_blank');
                       }
                     }}
-                    className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-cyan-500 hover:text-slate-950 text-cyan-300 border border-slate-700 font-bold text-xs flex items-center space-x-1 transition-all active:scale-95 cursor-pointer"
+                    className="px-4 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-600 hover:text-white text-emerald-800 border border-emerald-200 font-bold text-xs flex items-center space-x-1 transition-all active:scale-95 cursor-pointer"
                   >
                     <span>Book Bay</span>
                     <ChevronRight className="w-3.5 h-3.5" />

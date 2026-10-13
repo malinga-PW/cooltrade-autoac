@@ -24,7 +24,7 @@ export default function AboutPage({ setActiveTab }) {
   ];
 
   return (
-    <div className="bg-[#070B14] min-h-screen text-slate-100">
+    <div className="bg-[#F8FAFC] min-h-screen text-slate-900">
       
       {/* Cinematic Banner */}
       <PageBanner
@@ -32,11 +32,11 @@ export default function AboutPage({ setActiveTab }) {
         subtitle="Bandaragama's Specialized Automotive Air Conditioning Center & Direct Import Parts Distributor."
         badge="ABOUT COOL TRADE SERVICES"
         bgImage="/assets/banner-about.jpg"
-        breadcrumbs={[
-          { label: 'Home', tabId: 'home' },
-          { label: 'About Us', active: true }
-        ]}
-        setActiveTab={setActiveTab}
+        breadcrumbCurrent="About Us"
+        onNavigateHome={() => {
+          setActiveTab('home');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
@@ -45,41 +45,41 @@ export default function AboutPage({ setActiveTab }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-950/80 text-cyan-300 text-xs font-bold border border-cyan-800">
-              <Car className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200">
+              <Car className="w-3.5 h-3.5 text-emerald-600" />
               <span>THE COOL TRADE ADVANTAGE</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-heading leading-tight">
+            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight font-heading leading-tight">
               Direct Import Pricing, <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-800">
                 Dealership Precision.
               </span>
             </h2>
 
-            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               At <strong>Cool Trade Services</strong>, we solved the biggest problem vehicle owners face in Sri Lanka: recurring AC leaks and cheap imitation parts that seize compressors after a few months.
             </p>
 
-            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               By directly importing genuine brand new OEM compressors, condensers, and micro-channel cooling coils from authorized manufacturers, we eliminate third-party markup while providing real warranties and dealer-grade diagnostic testing.
             </p>
 
-            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-800">
-              <div className="p-4 rounded-2xl bg-[#0B101D] border border-slate-800 shadow-sm">
-                <div className="text-2xl font-black text-cyan-400 font-heading">3 Bays</div>
-                <div className="text-xs text-slate-400 font-bold uppercase mt-1">Dedicated AC Service Bays</div>
+            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-200">
+              <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">
+                <div className="text-2xl font-black text-emerald-700 font-heading">3 Bays</div>
+                <div className="text-xs text-slate-500 font-bold uppercase mt-1">Dedicated AC Service Bays</div>
               </div>
-              <div className="p-4 rounded-2xl bg-[#0B101D] border border-slate-800 shadow-sm">
-                <div className="text-2xl font-black text-white font-heading">100%</div>
-                <div className="text-xs text-slate-400 font-bold uppercase mt-1">Virgin R134a/R1234yf Gas</div>
+              <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">
+                <div className="text-2xl font-black text-slate-900 font-heading">100%</div>
+                <div className="text-xs text-slate-500 font-bold uppercase mt-1">Virgin R134a/R1234yf Gas</div>
               </div>
             </div>
           </div>
 
           {/* Visual Showcase Card */}
           <div className="lg:col-span-6 relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-950">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 bg-white">
               <img
                 src="/assets/banner-services.jpg"
                 alt="Cool Trade Technician at Work"
@@ -87,7 +87,7 @@ export default function AboutPage({ setActiveTab }) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent flex items-end p-6">
                 <div className="text-white space-y-1">
-                  <div className="flex items-center space-x-2 text-cyan-400 font-bold text-xs">
+                  <div className="flex items-center space-x-2 text-emerald-400 font-bold text-xs">
                     <Sparkles className="w-4 h-4" />
                     <span>Certified Technicians</span>
                   </div>
@@ -98,15 +98,15 @@ export default function AboutPage({ setActiveTab }) {
             </div>
 
             {/* Official Logo Emblem floating badge */}
-            <div className="absolute -top-6 -right-6 bg-slate-900 border border-slate-700 rounded-3xl p-3 shadow-2xl hidden sm:flex items-center space-x-3">
+            <div className="absolute -top-6 -right-6 bg-white border border-slate-200 rounded-3xl p-3 shadow-xl hidden sm:flex items-center space-x-3">
               <img
                 src="/assets/cooltrade-logo.png"
                 alt="Official Emblem"
-                className="w-14 h-14 rounded-full object-contain bg-slate-950 p-0.5"
+                className="w-14 h-14 rounded-full object-contain bg-slate-50 p-0.5 border border-slate-100"
               />
               <div className="pr-3">
-                <div className="text-xs font-black text-white">COOL TRADE</div>
-                <div className="text-[10px] text-cyan-400 font-bold">BANDARAGAMA</div>
+                <div className="text-xs font-black text-slate-900">COOL TRADE</div>
+                <div className="text-[10px] text-emerald-700 font-bold">BANDARAGAMA</div>
               </div>
             </div>
           </div>
@@ -114,29 +114,29 @@ export default function AboutPage({ setActiveTab }) {
         </div>
 
         {/* Milestones Grid */}
-        <div className="bg-[#0B101D] rounded-3xl border border-slate-800 p-8 sm:p-12 shadow-2xl space-y-8">
+        <div className="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">Why Vehicle Owners Choose Us</h3>
-            <p className="text-xs sm:text-sm text-slate-400">Built on uncompromising standards of refrigerant purity and mechanical accuracy.</p>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading">Why Vehicle Owners Choose Us</h3>
+            <p className="text-xs sm:text-sm text-slate-600">Built on uncompromising standards of refrigerant purity and mechanical accuracy.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {milestones.map((m, idx) => (
-              <div key={idx} className="p-5 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-2">
-                <span className="text-xs font-black uppercase tracking-wider text-cyan-400 bg-cyan-950 px-2.5 py-0.5 rounded-full inline-block border border-cyan-800">
+              <div key={idx} className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 shadow-2xs">
+                <span className="text-xs font-black uppercase tracking-wider text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full inline-block border border-emerald-300">
                   {m.year}
                 </span>
-                <h4 className="font-bold text-sm text-white font-heading">{m.title}</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">{m.desc}</p>
+                <h4 className="font-bold text-sm text-slate-900 font-heading">{m.title}</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">{m.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Workshop Location Banner */}
-        <div className="bg-gradient-to-r from-slate-950 via-[#0B101D] to-cyan-950 text-white rounded-3xl p-8 sm:p-10 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 border border-slate-800 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-2 text-cyan-400 text-xs font-bold">
+            <div className="flex items-center justify-center md:justify-start gap-2 text-emerald-400 text-xs font-bold">
               <MapPin className="w-4 h-4" />
               <span>Bandaragama Main Workshop Bay</span>
             </div>
@@ -151,7 +151,7 @@ export default function AboutPage({ setActiveTab }) {
               setActiveTab('contact');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg shadow-cyan-950/60 flex items-center gap-2 shrink-0 transition-all active:scale-95 cursor-pointer"
+            className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-black text-xs uppercase tracking-wider shadow-md shadow-emerald-950/40 flex items-center gap-2 shrink-0 transition-all active:scale-95 cursor-pointer"
           >
             <span>Get Directions & Bay Slot</span>
             <ChevronRight className="w-4 h-4" />
