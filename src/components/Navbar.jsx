@@ -100,7 +100,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenBooking }) {
                     EST. BANDARAGAMA
                   </span>
                 </div>
-                <p className="text-[10px] text-slate-500 font-extrabold uppercase tracking-widest">
+                <p className="font-condensed text-[9.5px] sm:text-[11px] text-slate-500 font-bold uppercase tracking-tight whitespace-nowrap leading-none mt-0.5">
                   PRECISION AUTO A/C & DIRECT IMPORTS
                 </p>
               </div>
@@ -168,20 +168,24 @@ export default function Navbar({ activeTab, setActiveTab, onOpenBooking }) {
 
             </div>
 
-            {/* Mobile Hamburger Toggle */}
+            {/* Mobile Navigation Toggle (Clearly visible [ ☰ Menu ] button) */}
             <div className="lg:hidden flex items-center space-x-2">
               <button
-                onClick={() => onOpenBooking()}
-                className="px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-black text-xs sm:hidden"
-              >
-                Book
-              </button>
-              <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-xl text-slate-700 hover:bg-slate-100 transition-colors"
-                aria-label="Toggle Menu"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-sm border border-slate-800 active:scale-95 transition-all select-none cursor-pointer"
+                aria-label="Toggle Navigation Menu"
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {mobileMenuOpen ? (
+                  <>
+                    <X className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span className="font-heading tracking-wider uppercase text-[11px] font-black">Close</span>
+                  </>
+                ) : (
+                  <>
+                    <Menu className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span className="font-heading tracking-wider uppercase text-[11px] font-black">Menu</span>
+                  </>
+                )}
               </button>
             </div>
 
@@ -191,6 +195,17 @@ export default function Navbar({ activeTab, setActiveTab, onOpenBooking }) {
         {/* Mobile Slide-out Menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-xl animate-in slide-in-from-top-2">
+            {/* Quick Action: Book Bay Slot */}
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenBooking();
+              }}
+              className="w-full mb-2 py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md shadow-emerald-700/20 active:scale-[0.99] transition-all cursor-pointer"
+            >
+              <Calendar className="w-4 h-4" />
+              <span>Book Bay Slot Online</span>
+            </button>
             {navItems.map((item) => (
               <button
                 key={item.id}
