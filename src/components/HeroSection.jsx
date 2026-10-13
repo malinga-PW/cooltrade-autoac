@@ -16,7 +16,7 @@ export default function HeroSection({ onOpenBooking, onOpenAiChat, setActiveTab 
   ];
 
   return (
-    <section className="relative min-h-screen lg:h-screen w-full flex flex-col justify-between overflow-hidden border-b border-slate-200 pt-28 lg:pt-32">
+    <section className="relative min-h-screen lg:h-screen w-full flex flex-col justify-between overflow-hidden border-b border-slate-800/80 pt-28 lg:pt-32">
       
       {/* 🖼️ Crisp Full-Screen Hero Background Image */}
       <div className="absolute inset-0 z-0">
@@ -26,8 +26,8 @@ export default function HeroSection({ onOpenBooking, onOpenAiChat, setActiveTab 
           className="w-full h-full object-cover object-center filter brightness-[0.98] contrast-[1.05]"
         />
         {/* Soft Left Vignette Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/50 to-transparent lg:w-3/5" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#070B14]/95 via-[#070B14]/80 to-transparent lg:w-3/5" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#070B14] via-transparent to-transparent" />
       </div>
 
       {/* Main Content Area */}
@@ -35,8 +35,8 @@ export default function HeroSection({ onOpenBooking, onOpenAiChat, setActiveTab 
         <div className="max-w-2xl space-y-5">
           
           {/* Badge */}
-          <div className="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full bg-white/95 border border-cyan-300 text-cyan-900 text-xs font-black backdrop-blur-md shadow-md">
-            <span className="flex h-2.5 w-2.5 rounded-full bg-cyan-500 animate-pulse" />
+          <div className="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full bg-[#0B101D]/90 border border-cyan-500/40 text-cyan-400 text-xs font-black backdrop-blur-md shadow-lg shadow-cyan-950/40">
+            <span className="flex h-2.5 w-2.5 rounded-full bg-cyan-400 animate-pulse" />
             <span>SPECIALIZED AUTO A/C CLINIC • BANDARAGAMA</span>
           </div>
 
@@ -49,23 +49,23 @@ export default function HeroSection({ onOpenBooking, onOpenAiChat, setActiveTab 
           </h1>
 
           {/* Subtitle */}
-          <p className="text-sm sm:text-base text-slate-100 max-w-xl font-medium leading-relaxed drop-shadow-sm">
+          <p className="text-sm sm:text-base text-slate-300 max-w-xl font-medium leading-relaxed drop-shadow-sm">
             Direct importers of brand new OEM compressors, cooling coils, and condensers in Sri Lanka. 
             Automated Robinair R134a/R1234yf vacuum recharge, nitrogen pressure leak testing, and expert dashboard overhauls in Bandaragama.
           </p>
 
           {/* Feature Highlights */}
           <div className="flex flex-wrap gap-2.5 pt-1">
-            <div className="flex items-center space-x-2 text-xs font-bold text-slate-900 bg-white/95 px-3 py-2 rounded-xl border border-white shadow-sm backdrop-blur-md">
-              <ShieldCheck className="w-4 h-4 text-cyan-600 shrink-0" />
+            <div className="flex items-center space-x-2 text-xs font-bold text-slate-200 bg-[#0B101D]/90 px-3 py-2 rounded-xl border border-slate-800 shadow-md backdrop-blur-md hover:border-cyan-500/50 transition-colors">
+              <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0" />
               <span>Direct OEM Parts Warranty</span>
             </div>
-            <div className="flex items-center space-x-2 text-xs font-bold text-slate-900 bg-white/95 px-3 py-2 rounded-xl border border-white shadow-sm backdrop-blur-md">
-              <Gauge className="w-4 h-4 text-cyan-600 shrink-0" />
+            <div className="flex items-center space-x-2 text-xs font-bold text-slate-200 bg-[#0B101D]/90 px-3 py-2 rounded-xl border border-slate-800 shadow-md backdrop-blur-md hover:border-cyan-500/50 transition-colors">
+              <Gauge className="w-4 h-4 text-cyan-400 shrink-0" />
               <span>Exact Gram Gas Charging</span>
             </div>
-            <div className="flex items-center space-x-2 text-xs font-bold text-slate-900 bg-white/95 px-3 py-2 rounded-xl border border-white shadow-sm backdrop-blur-md">
-              <Zap className="w-4 h-4 text-cyan-600 shrink-0" />
+            <div className="flex items-center space-x-2 text-xs font-bold text-slate-200 bg-[#0B101D]/90 px-3 py-2 rounded-xl border border-slate-800 shadow-md backdrop-blur-md hover:border-cyan-500/50 transition-colors">
+              <Zap className="w-4 h-4 text-cyan-400 shrink-0" />
               <span>Hybrid High-Voltage POE Oil</span>
             </div>
           </div>
@@ -77,7 +77,7 @@ export default function HeroSection({ onOpenBooking, onOpenAiChat, setActiveTab 
                 const el = document.getElementById('diagnostic-tool');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-black text-sm tracking-wide shadow-lg shadow-cyan-950/30 flex items-center justify-center space-x-2 transition-all transform active:scale-[0.98] cursor-pointer"
+              className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-sm tracking-wide shadow-lg shadow-cyan-950/40 flex items-center justify-center space-x-2 transition-all transform active:scale-[0.98] cursor-pointer"
             >
               <Gauge className="w-4 h-4" />
               <span>Diagnose AC Problem</span>
@@ -89,9 +89,9 @@ export default function HeroSection({ onOpenBooking, onOpenAiChat, setActiveTab 
                 if (setActiveTab) setActiveTab('shop');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="px-6 py-3.5 rounded-2xl bg-white/90 hover:bg-white text-slate-900 font-extrabold text-sm tracking-wide border border-slate-200 shadow-md flex items-center justify-center space-x-2 transition-all backdrop-blur-md cursor-pointer hover:border-cyan-300"
+              className="px-6 py-3.5 rounded-2xl bg-[#0E1527] hover:bg-[#131C33] text-slate-100 font-extrabold text-sm tracking-wide border border-slate-700/80 shadow-md flex items-center justify-center space-x-2 transition-all backdrop-blur-md cursor-pointer hover:border-cyan-400"
             >
-              <Car className="w-4 h-4 text-cyan-600" />
+              <Car className="w-4 h-4 text-cyan-400" />
               <span>Browse Parts Store</span>
             </button>
             

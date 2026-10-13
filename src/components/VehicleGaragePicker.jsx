@@ -144,19 +144,23 @@ export default function VehicleGaragePicker({ onOpenBooking, setActiveTab }) {
   };
 
   return (
-    <section className="py-20 bg-white border-b border-slate-200 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-[#070B14] border-b border-slate-900 relative overflow-hidden">
+      
+      {/* Background accents */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-80 h-80 bg-cyan-600/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-100 border border-cyan-300 text-cyan-800 text-xs font-bold">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-800 text-cyan-300 text-xs font-bold">
             <Car className="w-3.5 h-3.5" />
             <span>GARAGE COMPATIBILITY SPEC LOCKER</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-heading">
+          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-heading">
             Select Your Vehicle for Exact Factory AC Specs
           </h2>
-          <p className="text-slate-600 text-xs sm:text-sm">
+          <p className="text-slate-400 text-xs sm:text-sm">
             Never guess gas weight or compressor oil. Lock your vehicle model below to unlock official manufacturer refrigerant capacities and direct matching OEM spare parts.
           </p>
         </div>
@@ -171,8 +175,8 @@ export default function VehicleGaragePicker({ onOpenBooking, setActiveTab }) {
                 onClick={() => handleMakeChange(make)}
                 className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-black transition-all cursor-pointer ${
                   selectedMake === make
-                    ? 'bg-slate-900 text-white shadow-md ring-2 ring-cyan-500'
-                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                    ? 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-950/60 ring-2 ring-cyan-400'
+                    : 'bg-slate-900/90 text-slate-300 border border-slate-800 hover:border-slate-700 hover:text-white'
                 }`}
               >
                 {make}
@@ -188,8 +192,8 @@ export default function VehicleGaragePicker({ onOpenBooking, setActiveTab }) {
                 onClick={() => setSelectedModel(item.model)}
                 className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                   selectedModel === item.model
-                    ? 'bg-cyan-600 text-white shadow-xs'
-                    : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
+                    ? 'bg-cyan-950 text-cyan-300 border border-cyan-700 shadow-xs'
+                    : 'bg-slate-950/80 text-slate-400 border border-slate-800/80 hover:text-slate-200 hover:border-slate-700'
                 }`}
               >
                 {item.model}
@@ -200,10 +204,10 @@ export default function VehicleGaragePicker({ onOpenBooking, setActiveTab }) {
 
         {/* Specification Dashboard Card */}
         {currentSpec && (
-          <div className="max-w-5xl mx-auto bg-gradient-to-br from-slate-900 via-slate-950 to-cyan-950 rounded-3xl p-6 sm:p-10 text-white border border-slate-800 shadow-2xl relative overflow-hidden">
+          <div className="max-w-5xl mx-auto bg-gradient-to-br from-[#0B101D] via-[#0E1527] to-[#0A1324] rounded-3xl p-6 sm:p-10 text-white border border-slate-800 shadow-2xl relative overflow-hidden">
             
             {/* Top Bar */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-800 gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-800/80 gap-4">
               <div>
                 <span className="text-[10px] font-black uppercase tracking-wider text-cyan-400 bg-cyan-950/80 px-2.5 py-0.5 rounded-full border border-cyan-800">
                   OEM SPECIFICATION VERIFIED
@@ -223,7 +227,7 @@ export default function VehicleGaragePicker({ onOpenBooking, setActiveTab }) {
             {/* Spec Matrix Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8">
               
-              <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
+              <div className="p-5 rounded-2xl bg-slate-950/70 border border-slate-800/80 space-y-2">
                 <div className="text-[10px] text-slate-400 font-bold uppercase flex items-center gap-1.5">
                   <Gauge className="w-3.5 h-3.5 text-cyan-400" />
                   <span>Exact Factory Gas Charge</span>
@@ -236,7 +240,7 @@ export default function VehicleGaragePicker({ onOpenBooking, setActiveTab }) {
                 </p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
+              <div className="p-5 rounded-2xl bg-slate-950/70 border border-slate-800/80 space-y-2">
                 <div className="text-[10px] text-slate-400 font-bold uppercase flex items-center gap-1.5">
                   <Droplets className="w-3.5 h-3.5 text-amber-400" />
                   <span>Mandatory Lubricant Spec</span>
@@ -249,7 +253,7 @@ export default function VehicleGaragePicker({ onOpenBooking, setActiveTab }) {
                 </p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
+              <div className="p-5 rounded-2xl bg-slate-950/70 border border-slate-800/80 space-y-2">
                 <div className="text-[10px] text-slate-400 font-bold uppercase flex items-center gap-1.5">
                   <Layers className="w-3.5 h-3.5 text-sky-400" />
                   <span>Compressor Architecture</span>
@@ -265,7 +269,7 @@ export default function VehicleGaragePicker({ onOpenBooking, setActiveTab }) {
             </div>
 
             {/* Matching Parts & Actions Footer */}
-            <div className="pt-6 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="pt-6 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="space-y-1 text-center md:text-left">
                 <div className="text-xs font-bold text-slate-300 flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-emerald-400" />
@@ -280,7 +284,7 @@ export default function VehicleGaragePicker({ onOpenBooking, setActiveTab }) {
 
               <button
                 onClick={handleWhatsAppBooking}
-                className="w-full md:w-auto px-6 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-black text-xs uppercase tracking-wider shadow-lg shadow-cyan-950/50 flex items-center justify-center gap-2 transition-all active:scale-95 cursor-pointer"
+                className="w-full md:w-auto px-6 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg shadow-cyan-950/60 flex items-center justify-center gap-2 transition-all active:scale-95 cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>Book This Vehicle Bay Slot on WhatsApp</span>

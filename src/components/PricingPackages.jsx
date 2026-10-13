@@ -61,19 +61,19 @@ export default function PricingPackages({ onSelectPlan }) {
   ];
 
   return (
-    <section id="packages" className="py-24 relative bg-white border-b border-slate-200">
+    <section id="packages" className="py-24 relative bg-[#0A0F1D] border-b border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-100 border border-cyan-300 text-cyan-800 text-xs font-bold">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-800 text-cyan-300 text-xs font-bold">
             <Sparkles className="w-3.5 h-3.5" />
             <span>TRANSPARENT WORKSHOP PRICING</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-heading">
+          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-heading">
             Fixed-Price Auto AC Service Packages
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base">
+          <p className="text-slate-400 text-xs sm:text-base">
             No hidden costs. Direct import OEM parts, automated vacuum charging, and certified technician craftsmanship at our Bandaragama service facility.
           </p>
         </div>
@@ -85,12 +85,12 @@ export default function PricingPackages({ onSelectPlan }) {
               key={idx}
               className={`rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 relative ${
                 plan.popular
-                  ? 'bg-gradient-to-b from-slate-900 to-slate-950 text-white shadow-2xl border-2 border-cyan-500 scale-105 z-10'
-                  : 'bg-slate-50 text-slate-900 border border-slate-200 hover:border-slate-300 shadow-sm'
+                  ? 'bg-gradient-to-b from-[#0F172A] to-[#0B101D] text-white shadow-2xl border-2 border-cyan-500 scale-105 z-10'
+                  : 'bg-[#0B101D] text-white border border-slate-800 hover:border-slate-700 shadow-md'
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-[11px] font-black uppercase tracking-wider shadow-md">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 text-[11px] font-black uppercase tracking-wider shadow-md">
                   Most Popular Workshop Choice
                 </div>
               )}
@@ -98,22 +98,22 @@ export default function PricingPackages({ onSelectPlan }) {
               <div>
                 <div className="flex justify-between items-start mb-4">
                   <span className={`text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full ${
-                    plan.popular ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30' : 'bg-slate-200 text-slate-700'
+                    plan.popular ? 'bg-cyan-950 text-cyan-300 border border-cyan-700' : 'bg-slate-900 text-slate-400 border border-slate-800'
                   }`}>
                     {plan.tag}
                   </span>
                 </div>
 
-                <h3 className={`text-xl font-black font-heading mb-2 ${plan.popular ? 'text-white' : 'text-slate-900'}`}>
+                <h3 className="text-xl font-black font-heading mb-2 text-white">
                   {plan.name}
                 </h3>
-                <p className={`text-xs mb-6 leading-relaxed ${plan.popular ? 'text-slate-300' : 'text-slate-600'}`}>
+                <p className="text-xs mb-6 leading-relaxed text-slate-400">
                   {plan.desc}
                 </p>
 
-                <div className="mb-6 pb-6 border-b border-slate-200/20">
+                <div className="mb-6 pb-6 border-b border-slate-800">
                   <span className="text-xs font-bold text-slate-400">Rs. </span>
-                  <span className={`text-4xl font-black font-heading ${plan.popular ? 'text-cyan-400' : 'text-slate-900'}`}>
+                  <span className={`text-4xl font-black font-heading ${plan.popular ? 'text-cyan-400' : 'text-white'}`}>
                     {plan.price}
                   </span>
                   <span className="text-xs font-semibold text-slate-400 block mt-1">/ {plan.period}</span>
@@ -122,8 +122,8 @@ export default function PricingPackages({ onSelectPlan }) {
                 <div className="space-y-3 mb-8">
                   {plan.features.map((feat, fIdx) => (
                     <div key={fIdx} className="flex items-start space-x-2.5 text-xs">
-                      <Check className={`w-4 h-4 shrink-0 mt-0.5 ${plan.popular ? 'text-cyan-400' : 'text-cyan-600'}`} />
-                      <span className={plan.popular ? 'text-slate-200 font-medium' : 'text-slate-700 font-medium'}>
+                      <Check className={`w-4 h-4 shrink-0 mt-0.5 ${plan.popular ? 'text-cyan-400' : 'text-cyan-500'}`} />
+                      <span className="text-slate-300 font-medium">
                         {feat}
                       </span>
                     </div>
@@ -133,10 +133,10 @@ export default function PricingPackages({ onSelectPlan }) {
 
               <button
                 onClick={() => onSelectPlan({ plan: plan.name, price: plan.price, title: plan.name })}
-                className={`w-full py-3.5 rounded-2xl font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center space-x-2 active:scale-95 cursor-pointer ${
+                className={`w-full py-3.5 rounded-2xl font-black text-xs uppercase tracking-wider transition-all flex items-center justify-center space-x-2 active:scale-95 cursor-pointer ${
                   plan.popular
-                    ? 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg shadow-cyan-950/50'
-                    : 'bg-slate-900 hover:bg-slate-800 text-white'
+                    ? 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 shadow-lg shadow-cyan-950/60'
+                    : 'bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-slate-700'
                 }`}
               >
                 <span>{plan.btnText}</span>

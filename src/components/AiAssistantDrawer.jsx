@@ -94,21 +94,21 @@ export default function AiAssistantDrawer({ isOpen, onClose, onBookWithDetails }
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-y-0 right-0 z-50 w-full sm:w-[460px] bg-white shadow-2xl border-l border-slate-200 flex flex-col animate-in slide-in-from-right duration-300">
+    <div className="fixed inset-y-0 right-0 z-50 w-full sm:w-[460px] bg-[#0B101D] text-white shadow-2xl border-l border-slate-800 flex flex-col animate-in slide-in-from-right duration-300">
       
       {/* Top Header */}
-      <div className="p-4 sm:p-5 border-b border-slate-100 bg-slate-900 text-white flex items-center justify-between shrink-0">
+      <div className="p-4 sm:p-5 border-b border-slate-800 bg-slate-950 text-white flex items-center justify-between shrink-0">
         <div className="flex items-center space-x-3">
           <div className="relative">
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-md">
+            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-slate-950 shadow-md">
               <Bot className="w-5 h-5" />
             </div>
-            <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-400 border-2 border-slate-900" />
+            <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-400 border-2 border-slate-950" />
           </div>
           <div>
             <div className="flex items-center space-x-2">
               <h3 className="font-extrabold text-sm font-heading">Cool Trade AI Advisor</h3>
-              <span className="text-[9px] uppercase font-black bg-cyan-500/20 text-cyan-300 px-1.5 py-0.5 rounded border border-cyan-500/30">
+              <span className="text-[9px] uppercase font-black bg-cyan-950 text-cyan-300 px-1.5 py-0.5 rounded border border-cyan-800">
                 AUTO AC EXPERT
               </span>
             </div>
@@ -118,14 +118,14 @@ export default function AiAssistantDrawer({ isOpen, onClose, onBookWithDetails }
 
         <button 
           onClick={onClose}
-          className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+          className="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
       </div>
 
       {/* Messages Scroll Area */}
-      <div className="flex-1 p-4 overflow-y-auto space-y-4 bg-slate-50/60">
+      <div className="flex-1 p-4 overflow-y-auto space-y-4 bg-slate-950/70">
         {messages.map((msg, idx) => (
           <div 
             key={idx}
@@ -133,11 +133,11 @@ export default function AiAssistantDrawer({ isOpen, onClose, onBookWithDetails }
           >
             <div className={`max-w-[88%] rounded-2xl p-4 text-xs sm:text-sm leading-relaxed ${
               msg.sender === 'user'
-                ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-md rounded-tr-xs'
-                : 'bg-white text-slate-800 border border-slate-200/90 shadow-xs rounded-tl-xs'
+                ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-semibold shadow-md rounded-tr-xs'
+                : 'bg-[#0E1527] text-slate-200 border border-slate-800 shadow-xs rounded-tl-xs'
             }`}>
               <div className="whitespace-pre-line">{msg.text}</div>
-              <span className={`text-[10px] block mt-1.5 text-right ${msg.sender === 'user' ? 'text-cyan-200' : 'text-slate-400'}`}>
+              <span className={`text-[10px] block mt-1.5 text-right ${msg.sender === 'user' ? 'text-slate-900' : 'text-slate-500'}`}>
                 {msg.time}
               </span>
             </div>
@@ -146,10 +146,10 @@ export default function AiAssistantDrawer({ isOpen, onClose, onBookWithDetails }
 
         {isTyping && (
           <div className="flex justify-start">
-            <div className="bg-white rounded-2xl p-3 border border-slate-200 shadow-xs flex items-center space-x-1.5">
-              <span className="w-2 h-2 rounded-full bg-cyan-500 animate-bounce" />
-              <span className="w-2 h-2 rounded-full bg-cyan-500 animate-bounce [animation-delay:0.2s]" />
-              <span className="w-2 h-2 rounded-full bg-cyan-500 animate-bounce [animation-delay:0.4s]" />
+            <div className="bg-[#0E1527] rounded-2xl p-3 border border-slate-800 shadow-xs flex items-center space-x-1.5">
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-bounce" />
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-bounce [animation-delay:0.2s]" />
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-bounce [animation-delay:0.4s]" />
             </div>
           </div>
         )}
@@ -158,12 +158,12 @@ export default function AiAssistantDrawer({ isOpen, onClose, onBookWithDetails }
       </div>
 
       {/* Quick Inquiry Chips */}
-      <div className="p-3 border-t border-slate-100 bg-white overflow-x-auto whitespace-nowrap space-x-2 shrink-0">
+      <div className="p-3 border-t border-slate-800 bg-[#0B101D] overflow-x-auto whitespace-nowrap space-x-2 shrink-0">
         {quickPrompts.map((q, idx) => (
           <button
             key={idx}
             onClick={() => handleSend(q.text)}
-            className="inline-block px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-cyan-50 hover:text-cyan-700 text-slate-700 text-[11px] font-bold border border-slate-200 transition-colors"
+            className="inline-block px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-cyan-950 hover:text-cyan-300 text-slate-300 text-[11px] font-bold border border-slate-800 transition-colors"
           >
             {q.label}
           </button>
@@ -171,7 +171,7 @@ export default function AiAssistantDrawer({ isOpen, onClose, onBookWithDetails }
       </div>
 
       {/* Input Area */}
-      <div className="p-4 border-t border-slate-100 bg-white shrink-0">
+      <div className="p-4 border-t border-slate-800 bg-[#0B101D] shrink-0">
         <form 
           onSubmit={(e) => { e.preventDefault(); handleSend(); }}
           className="flex items-center space-x-2"
@@ -181,19 +181,19 @@ export default function AiAssistantDrawer({ isOpen, onClose, onBookWithDetails }
             placeholder="Type vehicle problem in Sinhala or English..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="flex-1 px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500 text-xs sm:text-sm font-medium"
+            className="flex-1 px-4 py-2.5 rounded-xl border border-slate-800 bg-slate-950 focus:outline-none focus:border-cyan-500 text-xs sm:text-sm font-medium text-white placeholder:text-slate-500"
           />
           <button
             type="submit"
-            className="p-2.5 rounded-xl bg-slate-900 hover:bg-cyan-600 text-white transition-colors"
+            className="p-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 transition-colors"
           >
             <Send className="w-4 h-4" />
           </button>
         </form>
 
         <div className="mt-2 flex items-center justify-between text-[11px] text-slate-400">
-          <a href="tel:+94777739449" className="hover:text-cyan-600 flex items-center gap-1 font-bold">
-            <Phone className="w-3 h-3 text-emerald-500" /> 077 773 9449
+          <a href="tel:+94777739449" className="hover:text-cyan-400 flex items-center gap-1 font-bold">
+            <Phone className="w-3 h-3 text-emerald-400" /> 077 773 9449
           </a>
           <span>Bandaragama Auto AC Clinic</span>
         </div>

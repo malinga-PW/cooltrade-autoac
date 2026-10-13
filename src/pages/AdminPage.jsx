@@ -23,7 +23,7 @@ import {
 import PageBanner from '../components/PageBanner';
 
 export default function AdminPage({ onNavigateHome }) {
-  const [activeTab, setActiveTab] = useState('bays'); // 'bays', 'inventory', 'history'
+  const [activeTab, setActiveTab] = useState('bays'); // 'bays', 'inventory'
   const [filterStatus, setFilterStatus] = useState('all');
 
   const [bayJobs, setBayJobs] = useState([
@@ -107,7 +107,7 @@ export default function AdminPage({ onNavigateHome }) {
     : bayJobs.filter(j => j.status.toLowerCase() === filterStatus.toLowerCase());
 
   return (
-    <div className="bg-[#F8FAFC] min-h-screen">
+    <div className="bg-[#070B14] min-h-screen text-slate-100">
       
       {/* Page Banner */}
       <PageBanner
@@ -127,61 +127,61 @@ export default function AdminPage({ onNavigateHome }) {
         {/* KPI Telemetry Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex items-center space-x-4">
-            <div className="p-3.5 rounded-2xl bg-cyan-50 border border-cyan-100 text-cyan-600">
+          <div className="bg-[#0B101D] p-6 rounded-3xl border border-slate-800 shadow-xl flex items-center space-x-4">
+            <div className="p-3.5 rounded-2xl bg-cyan-950/80 border border-cyan-800 text-cyan-400">
               <Car className="w-6 h-6" />
             </div>
             <div>
               <span className="text-xs font-bold text-slate-400 uppercase">Active Bay Slots</span>
-              <div className="text-2xl font-black text-slate-900 mt-0.5">3 / 3 In-Service</div>
-              <span className="text-[10px] text-emerald-600 font-bold">100% Workshop Utilization</span>
+              <div className="text-2xl font-black text-white mt-0.5">3 / 3 In-Service</div>
+              <span className="text-[10px] text-emerald-400 font-bold">100% Workshop Utilization</span>
             </div>
           </div>
 
-          <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex items-center space-x-4">
-            <div className="p-3.5 rounded-2xl bg-blue-50 border border-blue-100 text-blue-600">
+          <div className="bg-[#0B101D] p-6 rounded-3xl border border-slate-800 shadow-xl flex items-center space-x-4">
+            <div className="p-3.5 rounded-2xl bg-blue-950/80 border border-blue-800 text-blue-400">
               <Gauge className="w-6 h-6" />
             </div>
             <div>
               <span className="text-xs font-bold text-slate-400 uppercase">R134a Gas Available</span>
-              <div className="text-2xl font-black text-slate-900 mt-0.5">122.4 kg</div>
-              <span className="text-[10px] text-cyan-600 font-bold">Virgin 99.9% Purity</span>
+              <div className="text-2xl font-black text-white mt-0.5">122.4 kg</div>
+              <span className="text-[10px] text-cyan-400 font-bold">Virgin 99.9% Purity</span>
             </div>
           </div>
 
-          <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex items-center space-x-4">
-            <div className="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-100 text-emerald-600">
+          <div className="bg-[#0B101D] p-6 rounded-3xl border border-slate-800 shadow-xl flex items-center space-x-4">
+            <div className="p-3.5 rounded-2xl bg-emerald-950/80 border border-emerald-800 text-emerald-400">
               <CheckCircle2 className="w-6 h-6" />
             </div>
             <div>
               <span className="text-xs font-bold text-slate-400 uppercase">Today's Vehicles</span>
-              <div className="text-2xl font-black text-slate-900 mt-0.5">9 Completed</div>
-              <span className="text-[10px] text-slate-500 font-bold">Avg. Turnaround: 52 min</span>
+              <div className="text-2xl font-black text-white mt-0.5">9 Completed</div>
+              <span className="text-[10px] text-slate-400 font-bold">Avg. Turnaround: 52 min</span>
             </div>
           </div>
 
-          <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex items-center space-x-4">
-            <div className="p-3.5 rounded-2xl bg-amber-50 border border-amber-100 text-amber-600">
+          <div className="bg-[#0B101D] p-6 rounded-3xl border border-slate-800 shadow-xl flex items-center space-x-4">
+            <div className="p-3.5 rounded-2xl bg-amber-950/80 border border-amber-800 text-amber-400">
               <Layers className="w-6 h-6" />
             </div>
             <div>
               <span className="text-xs font-bold text-slate-400 uppercase">Direct Spares Stock</span>
-              <div className="text-2xl font-black text-slate-900 mt-0.5">38 Compressors</div>
-              <span className="text-[10px] text-amber-600 font-bold">Denso & Sanden OEM</span>
+              <div className="text-2xl font-black text-white mt-0.5">38 Compressors</div>
+              <span className="text-[10px] text-amber-400 font-bold">Denso & Sanden OEM</span>
             </div>
           </div>
 
         </div>
 
         {/* Tab Switcher & Status Filter */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-200 pb-5">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-800 pb-5">
           <div className="flex items-center space-x-2">
             <button
               onClick={() => setActiveTab('bays')}
               className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 activeTab === 'bays'
-                  ? 'bg-slate-900 text-white shadow-md'
-                  : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
+                  ? 'bg-cyan-500 text-slate-950 font-black shadow-md'
+                  : 'bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800'
               }`}
             >
               Bay Dispatch & Service Queue
@@ -190,8 +190,8 @@ export default function AdminPage({ onNavigateHome }) {
               onClick={() => setActiveTab('inventory')}
               className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 activeTab === 'inventory'
-                  ? 'bg-slate-900 text-white shadow-md'
-                  : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
+                  ? 'bg-cyan-500 text-slate-950 font-black shadow-md'
+                  : 'bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800'
               }`}
             >
               Direct Import Spares Inventory
@@ -204,7 +204,7 @@ export default function AdminPage({ onNavigateHome }) {
               <select
                 value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value)}
-                className="px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-xs font-bold text-slate-700"
+                className="px-3 py-1.5 rounded-xl border border-slate-800 bg-slate-950 text-xs font-bold text-white"
               >
                 <option value="all">All Jobs</option>
                 <option value="in bay">In Bay</option>
@@ -223,46 +223,46 @@ export default function AdminPage({ onNavigateHome }) {
               {filteredJobs.map((job) => (
                 <div
                   key={job.id}
-                  className="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-6"
+                  className="bg-[#0B101D] rounded-3xl border border-slate-800 p-6 shadow-xl hover:border-cyan-500/50 transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-6"
                 >
                   <div className="space-y-2">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-xs font-mono font-black text-cyan-600 bg-cyan-50 px-2.5 py-0.5 rounded-md border border-cyan-200">
+                      <span className="text-xs font-mono font-black text-cyan-300 bg-cyan-950 px-2.5 py-0.5 rounded-md border border-cyan-800">
                         {job.id}
                       </span>
-                      <span className="text-xs font-extrabold text-slate-800 bg-slate-100 px-2.5 py-0.5 rounded-md">
+                      <span className="text-xs font-extrabold text-slate-200 bg-slate-900 border border-slate-800 px-2.5 py-0.5 rounded-md">
                         {job.bay}
                       </span>
                       <span className={`text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full ${
-                        job.status === 'In Bay' ? 'bg-amber-100 text-amber-800 border border-amber-200' :
-                        job.status === 'Testing' ? 'bg-blue-100 text-blue-800 border border-blue-200' :
-                        job.status === 'Ready' ? 'bg-emerald-100 text-emerald-800 border border-emerald-200' :
-                        'bg-slate-100 text-slate-700'
+                        job.status === 'In Bay' ? 'bg-amber-950 text-amber-400 border border-amber-800' :
+                        job.status === 'Testing' ? 'bg-blue-950 text-blue-400 border border-blue-800' :
+                        job.status === 'Ready' ? 'bg-emerald-950 text-emerald-400 border border-emerald-800' :
+                        'bg-slate-800 text-slate-300'
                       }`}>
                         {job.status}
                       </span>
                     </div>
 
-                    <h4 className="text-base sm:text-lg font-black text-slate-900 font-heading">
+                    <h4 className="text-base sm:text-lg font-black text-white font-heading">
                       {job.vehicle}
                     </h4>
 
-                    <div className="text-xs text-slate-600 font-medium">
+                    <div className="text-xs text-slate-400 font-medium">
                       🛠️ <strong>Service:</strong> {job.service}
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-4 text-xs text-slate-500 pt-1">
+                    <div className="flex flex-wrap items-center gap-4 text-xs text-slate-400 pt-1">
                       <span>👤 {job.customer} ({job.phone})</span>
-                      <span>👨‍🔧 Assigned: <strong className="text-slate-800">{job.tech}</strong></span>
-                      <span>🧪 Spec: <strong className="text-cyan-700">{job.refrigerant}</strong></span>
+                      <span>👨‍🔧 Assigned: <strong className="text-slate-200">{job.tech}</strong></span>
+                      <span>🧪 Spec: <strong className="text-cyan-400">{job.refrigerant}</strong></span>
                     </div>
                   </div>
 
                   {/* Actions & Bill */}
-                  <div className="flex sm:flex-col items-center sm:items-end justify-between border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100 shrink-0 gap-3">
+                  <div className="flex sm:flex-col items-center sm:items-end justify-between border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-800 shrink-0 gap-3">
                     <div className="text-right">
                       <span className="text-[10px] font-bold uppercase text-slate-400 block">Estimated Bill</span>
-                      <span className="text-base sm:text-lg font-black text-slate-900 font-heading">{job.amount}</span>
+                      <span className="text-base sm:text-lg font-black text-cyan-400 font-heading">{job.amount}</span>
                     </div>
 
                     <div className="flex items-center space-x-2">
@@ -276,7 +276,7 @@ export default function AdminPage({ onNavigateHome }) {
                       ) : (
                         <button
                           onClick={() => handleUpdateStatus(job.id, 'In Bay')}
-                          className="px-3 py-1.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs transition-colors"
+                          className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs transition-colors"
                         >
                           Reopen Bay
                         </button>
@@ -286,10 +286,10 @@ export default function AdminPage({ onNavigateHome }) {
                         href={`https://wa.me/94777739449?text=Status%20Update%20for%20Vehicle%20${encodeURIComponent(job.vehicle)}%20(${job.id})`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors"
+                        className="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-colors"
                         title="Customer WhatsApp Message"
                       >
-                        <Phone className="w-4 h-4 text-emerald-600" />
+                        <Phone className="w-4 h-4 text-emerald-400" />
                       </a>
                     </div>
                   </div>
@@ -302,10 +302,10 @@ export default function AdminPage({ onNavigateHome }) {
 
         {/* Spares Inventory Tab */}
         {activeTab === 'inventory' && (
-          <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm overflow-x-auto">
+          <div className="bg-[#0B101D] rounded-3xl border border-slate-800 p-6 shadow-xl overflow-x-auto">
             <table className="w-full text-left text-xs sm:text-sm">
               <thead>
-                <tr className="border-b border-slate-200 text-slate-400 font-bold uppercase tracking-wider text-[11px]">
+                <tr className="border-b border-slate-800 text-slate-400 font-bold uppercase tracking-wider text-[11px]">
                   <th className="pb-3">Component / Part Description</th>
                   <th className="pb-3">In-Stock Qty</th>
                   <th className="pb-3">Unit Price</th>
@@ -313,21 +313,21 @@ export default function AdminPage({ onNavigateHome }) {
                   <th className="pb-3 text-right">Action</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 font-medium">
+              <tbody className="divide-y divide-slate-800/80 font-medium">
                 {inventory.map((item, idx) => (
-                  <tr key={idx} className="hover:bg-slate-50/60 transition-colors">
-                    <td className="py-4 font-bold text-slate-900">{item.part}</td>
-                    <td className="py-4 text-slate-700">{item.stock} Units</td>
-                    <td className="py-4 font-bold text-cyan-700">{item.price}</td>
+                  <tr key={idx} className="hover:bg-slate-900/40 transition-colors">
+                    <td className="py-4 font-bold text-white">{item.part}</td>
+                    <td className="py-4 text-slate-300">{item.stock} Units</td>
+                    <td className="py-4 font-bold text-cyan-400">{item.price}</td>
                     <td className="py-4">
                       <span className={`text-[10px] font-black uppercase px-2 py-0.5 rounded-full ${
-                        item.status === 'Healthy' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'
+                        item.status === 'Healthy' ? 'bg-emerald-950 text-emerald-400 border border-emerald-800' : 'bg-amber-950 text-amber-400 border border-amber-800'
                       }`}>
                         {item.status}
                       </span>
                     </td>
                     <td className="py-4 text-right">
-                      <button className="text-xs font-bold text-cyan-600 hover:text-cyan-800 underline">
+                      <button className="text-xs font-bold text-cyan-400 hover:text-cyan-300 underline">
                         Restock
                       </button>
                     </td>

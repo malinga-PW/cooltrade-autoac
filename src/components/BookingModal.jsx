@@ -43,14 +43,14 @@ export default function BookingModal({ isOpen, onClose, initialData = {} }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-md animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
       <div 
-        className="bg-white rounded-3xl border border-slate-200 shadow-2xl max-w-lg w-full overflow-hidden relative max-h-[90vh] flex flex-col animate-in zoom-in-95 duration-200"
+        className="bg-[#0B101D] text-white rounded-3xl border border-slate-800 shadow-2xl max-w-lg w-full overflow-hidden relative max-h-[90vh] flex flex-col animate-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
         
         {/* Header */}
-        <div className="p-6 border-b border-slate-100 flex items-center justify-between bg-slate-900 text-white shrink-0">
+        <div className="p-6 border-b border-slate-800 flex items-center justify-between bg-slate-950 text-white shrink-0">
           <div>
             <span className="text-[10px] font-black uppercase tracking-wider text-cyan-400 bg-cyan-950/80 px-2.5 py-0.5 rounded-full border border-cyan-800">
               BANDARAGAMA BAY RESERVATION
@@ -59,7 +59,7 @@ export default function BookingModal({ isOpen, onClose, initialData = {} }) {
           </div>
           <button 
             onClick={onClose}
-            className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+            className="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -70,7 +70,7 @@ export default function BookingModal({ isOpen, onClose, initialData = {} }) {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-700 block mb-1">
+              <label className="text-xs font-bold uppercase tracking-wider text-slate-300 block mb-1">
                 Your Name
               </label>
               <div className="relative">
@@ -81,13 +81,13 @@ export default function BookingModal({ isOpen, onClose, initialData = {} }) {
                   placeholder="e.g. Asanka Perera"
                   value={customerName}
                   onChange={(e) => setCustomerName(e.target.value)}
-                  className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500 text-xs sm:text-sm font-medium"
+                  className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-800 bg-slate-950 focus:outline-none focus:border-cyan-500 text-xs sm:text-sm font-medium text-white placeholder:text-slate-500"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-700 block mb-1">
+              <label className="text-xs font-bold uppercase tracking-wider text-slate-300 block mb-1">
                 Phone Number
               </label>
               <div className="relative">
@@ -98,7 +98,7 @@ export default function BookingModal({ isOpen, onClose, initialData = {} }) {
                   placeholder="077 123 4567"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500 text-xs sm:text-sm font-medium"
+                  className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-800 bg-slate-950 focus:outline-none focus:border-cyan-500 text-xs sm:text-sm font-medium text-white placeholder:text-slate-500"
                 />
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function BookingModal({ isOpen, onClose, initialData = {} }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-700 block mb-1">
+              <label className="text-xs font-bold uppercase tracking-wider text-slate-300 block mb-1">
                 Vehicle Model
               </label>
               <div className="relative">
@@ -117,13 +117,13 @@ export default function BookingModal({ isOpen, onClose, initialData = {} }) {
                   placeholder="e.g. Prius, Aqua, WagonR, KDH"
                   value={vehicleModel}
                   onChange={(e) => setVehicleModel(e.target.value)}
-                  className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500 text-xs sm:text-sm font-medium"
+                  className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-800 bg-slate-950 focus:outline-none focus:border-cyan-500 text-xs sm:text-sm font-medium text-white placeholder:text-slate-500"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-700 block mb-1">
+              <label className="text-xs font-bold uppercase tracking-wider text-slate-300 block mb-1">
                 Vehicle Reg Number
               </label>
               <input
@@ -131,13 +131,13 @@ export default function BookingModal({ isOpen, onClose, initialData = {} }) {
                 placeholder="e.g. WP CAC-1234"
                 value={vehicleNumber}
                 onChange={(e) => setVehicleNumber(e.target.value)}
-                className="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500 text-xs sm:text-sm font-medium"
+                className="w-full px-3 py-2.5 rounded-xl border border-slate-800 bg-slate-950 focus:outline-none focus:border-cyan-500 text-xs sm:text-sm font-medium text-white placeholder:text-slate-500"
               />
             </div>
           </div>
 
           <div>
-            <label className="text-xs font-bold uppercase tracking-wider text-slate-700 block mb-1">
+            <label className="text-xs font-bold uppercase tracking-wider text-slate-300 block mb-1">
               Select Required Service
             </label>
             <div className="relative">
@@ -145,7 +145,7 @@ export default function BookingModal({ isOpen, onClose, initialData = {} }) {
               <select
                 value={service}
                 onChange={(e) => setService(e.target.value)}
-                className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500 text-xs sm:text-sm font-medium"
+                className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-800 bg-slate-950 focus:outline-none focus:border-cyan-500 text-xs sm:text-sm font-medium text-white"
               >
                 <option value="Gas Vacuum & Refill">Automated Gas Vacuum & Refill (R134a/R1234yf)</option>
                 <option value="Nitrogen Leak Detection">Nitrogen 250 PSI Leak Test</option>
@@ -159,25 +159,25 @@ export default function BookingModal({ isOpen, onClose, initialData = {} }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-700 block mb-1">
+              <label className="text-xs font-bold uppercase tracking-wider text-slate-300 block mb-1">
                 Preferred Date
               </label>
               <input
                 type="date"
                 value={preferredDate}
                 onChange={(e) => setPreferredDate(e.target.value)}
-                className="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500 text-xs sm:text-sm font-medium"
+                className="w-full px-3 py-2.5 rounded-xl border border-slate-800 bg-slate-950 focus:outline-none focus:border-cyan-500 text-xs sm:text-sm font-medium text-white"
               />
             </div>
 
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-700 block mb-1">
+              <label className="text-xs font-bold uppercase tracking-wider text-slate-300 block mb-1">
                 Preferred Bay Time
               </label>
               <select
                 value={timeSlot}
                 onChange={(e) => setTimeSlot(e.target.value)}
-                className="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500 text-xs sm:text-sm font-medium"
+                className="w-full px-3 py-2.5 rounded-xl border border-slate-800 bg-slate-950 focus:outline-none focus:border-cyan-500 text-xs sm:text-sm font-medium text-white"
               >
                 <option value="Morning (8:30 AM - 12:00 PM)">Morning (8:30 AM - 12:00 PM)</option>
                 <option value="Afternoon (1:00 PM - 4:00 PM)">Afternoon (1:00 PM - 4:00 PM)</option>
@@ -187,7 +187,7 @@ export default function BookingModal({ isOpen, onClose, initialData = {} }) {
           </div>
 
           <div>
-            <label className="text-xs font-bold uppercase tracking-wider text-slate-700 block mb-1">
+            <label className="text-xs font-bold uppercase tracking-wider text-slate-300 block mb-1">
               Any Specific Symptoms / Notes
             </label>
             <textarea
@@ -195,22 +195,22 @@ export default function BookingModal({ isOpen, onClose, initialData = {} }) {
               placeholder="e.g. Cooling drops in traffic, rattling noise when AC starts..."
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              className="w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500 text-xs sm:text-sm font-medium"
+              className="w-full px-3 py-2 rounded-xl border border-slate-800 bg-slate-950 focus:outline-none focus:border-cyan-500 text-xs sm:text-sm font-medium text-white placeholder:text-slate-500"
             />
           </div>
 
           <div className="pt-2">
             <button
               type="submit"
-              className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-500 hover:to-blue-600 text-white font-extrabold text-sm shadow-lg shadow-cyan-950/20 flex items-center justify-center space-x-2 transition-all active:scale-[0.98]"
+              className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-sm uppercase tracking-wider shadow-lg shadow-cyan-950/60 flex items-center justify-center space-x-2 transition-all active:scale-[0.98] cursor-pointer"
             >
               <Send className="w-4 h-4" />
               <span>Confirm Bay Reservation on WhatsApp</span>
             </button>
           </div>
 
-          <div className="flex items-center justify-center space-x-2 text-[11px] text-slate-500">
-            <ShieldCheck className="w-4 h-4 text-emerald-600" />
+          <div className="flex items-center justify-center space-x-2 text-[11px] text-slate-400">
+            <ShieldCheck className="w-4 h-4 text-emerald-400" />
             <span>Direct Japanese Spares • 6-Month Warranty</span>
           </div>
 

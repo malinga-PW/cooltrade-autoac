@@ -15,7 +15,7 @@ import {
 
 export default function Footer({ setActiveTab }) {
   return (
-    <footer className="bg-slate-950 text-slate-400 text-xs sm:text-sm border-t border-slate-900 pt-16 pb-12">
+    <footer className="bg-[#04070E] text-slate-400 text-xs sm:text-sm border-t border-slate-900 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Main Grid */}
@@ -27,7 +27,7 @@ export default function Footer({ setActiveTab }) {
               <img
                 src="/assets/cooltrade-logo.png"
                 alt="Cool Trade Services Logo"
-                className="w-12 h-12 rounded-full object-contain bg-white p-0.5"
+                className="w-12 h-12 rounded-full object-contain bg-slate-950 border border-slate-800 p-0.5"
               />
               <div>
                 <span className="text-xl font-black text-white tracking-tight font-heading">
@@ -55,7 +55,7 @@ export default function Footer({ setActiveTab }) {
                 href="https://wa.me/94777739449"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3.5 py-2 rounded-xl bg-emerald-950/40 hover:bg-emerald-900/50 text-emerald-300 font-bold text-xs border border-emerald-800/50 flex items-center gap-1.5 transition-colors"
+                className="px-3.5 py-2 rounded-xl bg-emerald-950/60 hover:bg-emerald-900/70 text-emerald-300 font-bold text-xs border border-emerald-800/60 flex items-center gap-1.5 transition-colors"
               >
                 <MessageCircle className="w-3.5 h-3.5" />
                 <span>WhatsApp Bay</span>
@@ -74,7 +74,7 @@ export default function Footer({ setActiveTab }) {
                   onClick={() => { setActiveTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                   className="hover:text-cyan-400 transition-colors"
                 >
-                  Home & Workshop Highlights
+                  Home & Live Bays
                 </button>
               </li>
               <li>
@@ -121,7 +121,7 @@ export default function Footer({ setActiveTab }) {
                   onClick={() => { setActiveTab('admin'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                   className="hover:text-cyan-400 transition-colors"
                 >
-                  Workshop Admin Portal
+                  Workshop Admin Portal (Demo)
                 </button>
               </li>
             </ul>
@@ -148,7 +148,7 @@ export default function Footer({ setActiveTab }) {
               </div>
             </div>
 
-            <div className="p-3 rounded-2xl bg-slate-900 border border-slate-800 text-[11px] text-slate-300">
+            <div className="p-3 rounded-2xl bg-[#0B101D] border border-slate-800 text-[11px] text-slate-300">
               <strong className="text-cyan-300 block mb-0.5">OEM Direct Importers:</strong>
               Denso • Sanden • Valeo • Hanon Systems genuine components backed by verified warranty.
             </div>

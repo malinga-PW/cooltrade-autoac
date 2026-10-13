@@ -22,8 +22,8 @@ export default function PageBanner({
           className="w-full h-full object-cover object-center filter brightness-[0.42] saturate-125 scale-105 transform motion-safe:transition-transform duration-1000 ease-out"
         />
         {/* Sleek Gradient Overlay for Crisp Text Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-sky-950/60" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-500/15 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-cyan-950/60" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-500/15 via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,13 +32,13 @@ export default function PageBanner({
         <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-xs font-semibold text-slate-300 mb-4">
           <button
             onClick={onNavigateHome}
-            className="flex items-center gap-1.5 text-slate-300 hover:text-sky-300 transition-colors focus:outline-hidden"
+            className="flex items-center gap-1.5 text-slate-300 hover:text-cyan-300 transition-colors focus:outline-hidden"
           >
-            <Home className="w-3.5 h-3.5 text-sky-400" />
+            <Home className="w-3.5 h-3.5 text-cyan-400" />
             <span>Home</span>
           </button>
           <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-          <span className="text-sky-400 font-bold bg-sky-950/60 px-2 py-0.5 rounded-md border border-sky-800/60">
+          <span className="text-cyan-300 font-bold bg-cyan-950/80 px-2 py-0.5 rounded-md border border-cyan-800/80">
             {breadcrumbCurrent || title}
           </span>
         </nav>
@@ -47,8 +47,8 @@ export default function PageBanner({
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-3xl space-y-3">
             {badge && (
-              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-xs font-bold tracking-wide backdrop-blur-md">
-                {BadgeIcon && <BadgeIcon className="w-3.5 h-3.5 text-sky-400" />}
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 text-xs font-bold tracking-wide backdrop-blur-md">
+                {BadgeIcon && <BadgeIcon className="w-3.5 h-3.5 text-cyan-400" />}
                 <span>{badge}</span>
               </div>
             )}

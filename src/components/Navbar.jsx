@@ -22,7 +22,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenBooking }) {
     { id: 'services', label: 'Services' },
     { id: 'shop', label: 'Parts Store', badge: 'Direct Imports' },
     { id: 'about', label: 'About Us' },
-    { id: 'contact', label: 'Workshop & Hub' },
+    { id: 'contact', label: 'Workshop Hub' },
   ];
 
   return (
@@ -30,10 +30,10 @@ export default function Navbar({ activeTab, setActiveTab, onOpenBooking }) {
       
       {/* 🚀 Top Announcement Banner with Open Demo Admin Access */}
       <div 
-        className={`bg-slate-950 text-white text-[11px] font-semibold transition-all duration-300 ease-in-out ${
+        className={`bg-[#050811] text-slate-300 text-[11px] font-semibold transition-all duration-300 ease-in-out ${
           scrolled 
             ? 'h-0 max-h-0 opacity-0 overflow-hidden py-0 border-0 pointer-events-none' 
-            : 'h-auto max-h-12 opacity-100 py-1.5 border-b border-slate-800'
+            : 'h-auto max-h-12 opacity-100 py-1.5 border-b border-slate-800/80'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -60,7 +60,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenBooking }) {
               }}
               className={`px-3 py-0.5 rounded-lg border transition-all text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 cursor-pointer ${
                 activeTab === 'admin'
-                  ? 'bg-cyan-500 text-white border-cyan-400'
+                  ? 'bg-cyan-500 text-slate-950 border-cyan-400'
                   : 'bg-cyan-950/60 border-cyan-700/80 text-cyan-300 hover:text-white hover:bg-cyan-900'
               }`}
             >
@@ -71,8 +71,8 @@ export default function Navbar({ activeTab, setActiveTab, onOpenBooking }) {
         </div>
       </div>
 
-      {/* 🌟 Main Navigation Bar - Distinct High-Tech Automotive Styling */}
-      <nav className="border-b border-slate-200/90 bg-white/95 backdrop-blur-xl shadow-xs transition-all duration-300">
+      {/* 🌟 Main Navigation Bar - Dark Obsidian & Neon Cyan Styling */}
+      <nav className="border-b border-slate-800/90 bg-[#070B14]/95 backdrop-blur-2xl shadow-xl transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             
@@ -85,22 +85,22 @@ export default function Navbar({ activeTab, setActiveTab, onOpenBooking }) {
                 <img
                   src="/assets/cooltrade-logo.png"
                   alt="Cool Trade Services Official Logo"
-                  className="w-12 h-12 object-contain shrink-0 group-hover:scale-105 transition-transform drop-shadow-sm rounded-full bg-slate-900 p-0.5"
+                  className="w-12 h-12 object-contain shrink-0 group-hover:scale-105 transition-transform drop-shadow-md rounded-full bg-slate-950 border border-slate-700 p-0.5"
                 />
-                <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white" />
+                <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-slate-900" />
               </div>
               <div className="leading-tight">
                 <div className="flex items-center space-x-2">
-                  <span className="text-xl sm:text-2xl font-black tracking-tight font-heading">
-                    <span className="text-cyan-600">COOL</span>
-                    <span className="text-slate-950">TRADE</span>
-                    <span className="text-blue-600">.</span>
+                  <span className="text-xl sm:text-2xl font-black tracking-tight font-heading text-white">
+                    <span className="text-cyan-400">COOL</span>
+                    <span className="text-white">TRADE</span>
+                    <span className="text-cyan-400">.</span>
                   </span>
-                  <span className="text-[9px] uppercase font-black tracking-widest px-2 py-0.5 rounded-full bg-slate-900 text-cyan-300 border border-slate-800 hidden sm:inline-block font-mono">
+                  <span className="text-[9px] uppercase font-black tracking-widest px-2 py-0.5 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800 hidden sm:inline-block font-mono">
                     EST. BANDARAGAMA
                   </span>
                 </div>
-                <p className="text-[10px] text-slate-500 font-extrabold uppercase tracking-widest">
+                <p className="text-[10px] text-slate-400 font-extrabold uppercase tracking-widest">
                   PRECISION AUTO A/C & DIRECT IMPORTS
                 </p>
               </div>
@@ -119,13 +119,13 @@ export default function Navbar({ activeTab, setActiveTab, onOpenBooking }) {
                     }}
                     className={`relative px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center space-x-1.5 cursor-pointer ${
                       isActive
-                        ? 'text-cyan-700 bg-cyan-50/90 shadow-xs ring-1 ring-cyan-200'
-                        : 'text-slate-700 hover:text-slate-950 hover:bg-slate-100/70'
+                        ? 'text-cyan-300 bg-cyan-950/80 border border-cyan-800/80 shadow-xs'
+                        : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
                     }`}
                   >
                     <span>{item.label}</span>
                     {item.badge && (
-                      <span className="text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded bg-cyan-100 text-cyan-800 border border-cyan-200">
+                      <span className="text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">
                         {item.badge}
                       </span>
                     )}
@@ -151,18 +151,18 @@ export default function Navbar({ activeTab, setActiveTab, onOpenBooking }) {
                     }, 100);
                   }
                 }}
-                className="px-3 py-2 rounded-xl border border-slate-200 hover:border-slate-300 text-slate-700 font-bold text-xs flex items-center gap-1.5 transition-all bg-slate-50 hover:bg-slate-100 cursor-pointer"
+                className="px-3 py-2 rounded-xl border border-slate-700/80 hover:border-cyan-500 text-slate-300 hover:text-white font-bold text-xs flex items-center gap-1.5 transition-all bg-slate-900/80 hover:bg-slate-800 cursor-pointer"
               >
-                <ShieldCheck className="w-3.5 h-3.5 text-cyan-600" />
+                <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
                 <span>Warranty</span>
               </button>
 
               {/* Book Bay Slot CTA */}
               <button
                 onClick={() => onOpenBooking()}
-                className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-slate-900 to-cyan-900 hover:from-slate-800 hover:to-cyan-800 text-white font-extrabold text-xs tracking-wide shadow-md shadow-slate-950/20 flex items-center space-x-2 transition-all active:scale-[0.98] cursor-pointer"
+                className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-xs tracking-wide shadow-lg shadow-cyan-950/60 flex items-center space-x-2 transition-all active:scale-[0.98] cursor-pointer"
               >
-                <Calendar className="w-3.5 h-3.5 text-cyan-300" />
+                <Calendar className="w-3.5 h-3.5" />
                 <span>Book Bay Slot</span>
               </button>
 
@@ -172,13 +172,13 @@ export default function Navbar({ activeTab, setActiveTab, onOpenBooking }) {
             <div className="lg:hidden flex items-center space-x-2">
               <button
                 onClick={() => onOpenBooking()}
-                className="px-3 py-1.5 rounded-lg bg-cyan-600 text-white font-bold text-xs sm:hidden"
+                className="px-3 py-1.5 rounded-lg bg-cyan-500 text-slate-950 font-black text-xs sm:hidden"
               >
                 Book
               </button>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-xl text-slate-700 hover:bg-slate-100 transition-colors"
+                className="p-2 rounded-xl text-slate-300 hover:bg-slate-800 transition-colors"
                 aria-label="Toggle Menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -190,7 +190,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenBooking }) {
 
         {/* Mobile Slide-out Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-200 bg-white/98 px-4 pt-3 pb-6 space-y-2 shadow-xl animate-in slide-in-from-top-2">
+          <div className="lg:hidden border-t border-slate-800 bg-[#070B14]/98 px-4 pt-3 pb-6 space-y-2 shadow-2xl animate-in slide-in-from-top-2">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -201,20 +201,20 @@ export default function Navbar({ activeTab, setActiveTab, onOpenBooking }) {
                 }}
                 className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-left text-sm font-bold ${
                   activeTab === item.id
-                    ? 'bg-cyan-50 text-cyan-700 border border-cyan-200'
-                    : 'text-slate-700 hover:bg-slate-50'
+                    ? 'bg-cyan-950 text-cyan-300 border border-cyan-800'
+                    : 'text-slate-300 hover:bg-slate-900'
                 }`}
               >
                 <span>{item.label}</span>
                 {item.badge && (
-                  <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded bg-cyan-100 text-cyan-800">
+                  <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">
                     {item.badge}
                   </span>
                 )}
               </button>
             ))}
 
-            <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
+            <div className="pt-3 border-t border-slate-800 flex flex-col gap-2">
               <button
                 onClick={() => {
                   setActiveTab('admin');
@@ -229,7 +229,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenBooking }) {
 
               <a
                 href="tel:+94777739449"
-                className="w-full py-3 px-4 rounded-xl bg-slate-900 text-white font-bold text-center text-xs flex items-center justify-center gap-2"
+                className="w-full py-3 px-4 rounded-xl bg-slate-900 text-white font-bold text-center text-xs flex items-center justify-center gap-2 border border-slate-800"
               >
                 <Phone className="w-4 h-4 text-emerald-400" />
                 <span>Call Bandaragama: 077 773 9449</span>
