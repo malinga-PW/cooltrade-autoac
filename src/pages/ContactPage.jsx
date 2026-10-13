@@ -132,22 +132,31 @@ export default function ContactPage({ setActiveTab }) {
               </div>
 
               {/* Direct Call & WhatsApp Action Buttons */}
-              <div className="pt-2 grid grid-cols-2 gap-3">
+              <div className="pt-2 grid grid-cols-3 gap-2">
                 <a
                   href="tel:+94777739449"
-                  className="py-3 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center flex items-center justify-center gap-1.5 transition-all shadow-sm"
+                  className="py-3 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center flex items-center justify-center gap-1.5 transition-all shadow-sm"
                 >
                   <Phone className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Call Hotline</span>
+                  <span>Call</span>
                 </a>
                 <a
                   href="https://wa.me/94777739449?text=Hello%20Cool%20Trade%20Services!%20I%20would%20like%20to%20inquire%20about%20Auto%20AC%20bay%20slot."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs text-center flex items-center justify-center gap-1.5 transition-all shadow-sm"
+                  className="py-3 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs text-center flex items-center justify-center gap-1.5 transition-all shadow-sm"
                 >
                   <MessageCircle className="w-3.5 h-3.5" />
                   <span>WhatsApp</span>
+                </a>
+                <a
+                  href="https://maps.app.goo.gl/2sFBwyqh7wuadSwY7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-3 px-3 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs text-center flex items-center justify-center gap-1.5 transition-all shadow-sm"
+                >
+                  <MapPin className="w-3.5 h-3.5" />
+                  <span>Map Pin</span>
                 </a>
               </div>
 

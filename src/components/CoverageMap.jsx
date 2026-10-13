@@ -70,12 +70,13 @@ export default function CoverageMap() {
               <span>077 773 9449</span>
             </a>
             <a
-              href="https://wa.me/94777739449?text=Please%20send%20the%20Google%20Maps%20location%20of%20Cool%20Trade%20Services%20Bandaragama."
+              href="https://maps.app.goo.gl/2sFBwyqh7wuadSwY7"
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-white font-black text-xs uppercase tracking-wider shadow-lg shadow-cyan-950/50 flex items-center gap-1.5 transition-all"
             >
-              <span>Get Location Pin</span>
+              <MapPin className="w-3.5 h-3.5" />
+              <span>Open Google Maps</span>
               <ChevronRight className="w-4 h-4" />
             </a>
           </div>
